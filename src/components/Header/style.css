@@ -1,0 +1,12 @@
+/* Header specific styles */
+
+.header-left{
+	position: fixed;
+	left:0;
+	top:0;
+}
+.header-right{
+	position: fixed;
+	right:0;
+	top:0;
+}

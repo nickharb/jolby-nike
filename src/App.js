@@ -1,25 +1,70 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link,
+  withRouter,
+  RouteComponentProps,
+  useParams
+} from "react-router-dom";
+import {Home, Dashboard} from './components'
 
-function App() {
+
+const NoMatchPage = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <h3 className='oops-message text-large'>Woops! This page does not exist. Maybe try going <a className='link' href='/'>Home</a>?</h3>
     </div>
   );
+};
+
+
+class App extends React.Component {
+  constructor(props){
+    super(props);
+    this.state = {
+      
+        
+    };
+
+  }
+
+  componentDidMount() {
+
+
+  }
+
+
+render() {
+
+
+  return (
+    <Router>
+    <div className="App">
+      <Switch>
+        <Route exact path="/">
+
+            <Home />
+
+        </Route>
+        <Route exact path="/dashboard">
+
+            <Dashboard />
+
+        </Route>
+        <Route exact path="/profile/:block">
+
+           <h1>placeholder</h1>
+
+        </Route>
+        <Route component={NoMatchPage} />
+      </Switch>
+    </div>
+    </Router>
+  );
+}
+
 }
 
 export default App;

@@ -1,0 +1,10 @@
+/* DASHBOARD specific styles */
+.Dashboard.content-wrapper{
+	display: flex;
+	justify-content: space-around;
+}
+
+.panel{
+	width: 15%;
+	border:1px solid;
+}

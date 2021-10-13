@@ -1,0 +1,19 @@
+/* NAV specific styles */
+
+.main-menu ul{
+	list-style: none;
+	padding:0;
+	display: flex;
+	justify-content: space-around;
+	position:fixed;
+	top:0;
+	width: 40vw;
+	left: calc((100vw - 40vw)/2);
+}
+.main-menu li{
+	display: inline-block;
+}
+
+.main-menu a{
+	text-decoration: none;
+}
