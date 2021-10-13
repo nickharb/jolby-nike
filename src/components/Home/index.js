@@ -32,13 +32,16 @@ function Home() {
      <Header></Header>
      <div className="Homepage content-wrapper">
           <div class="left-panel">
-            <div class='updates'>
+            <div>
+            <h3>updates from space:</h3>
+            <div class='updates-carousel'>
               <div class='slide'>
                 Campus will be closed
               </div>
               <div class='slide'>
                 burger weeek wooohoo
               </div>
+            </div>
             </div>
             <a href="/dashboard">Enter The Portal ></a>
           </div>

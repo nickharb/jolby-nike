@@ -1,4 +1,9 @@
 /* any homepage specific styles can go here */
-.Homepage.content-wrapper{
-	margin-top:0;
+
+.left-panel{
+	width: calc(50% - 100px);
+	padding:50px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
 }
