@@ -13,8 +13,8 @@ that's it!
 - components/ - holds all our components 
    - index.js - exports all our components
    - NameOfComponent/ - each component exists under components/NameOfComponent
-   	- index.js - component code //we will also create our graphql queries here at the component level.
-   	- style.css - component specific styles
+   	   - index.js - component code //we will also create our graphql queries here at the component level.
+   	   - style.css - component specific styles
 
 
 
