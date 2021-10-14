@@ -7,14 +7,15 @@
 that's it!
 
 ## File structures
-- index.js - we connect to the api via graphql here
-- App.js - routing lives here
-- index.css - Global styles go here
-- components/ - holds all our components 
-   - index.js - exports all our components
-   - NameOfComponent/ - each component exists under components/NameOfComponent
-   	   - index.js - component code //we will also create our graphql queries here at the component level.
-   	   - style.css - component specific styles
+everything you'll likely edit is in /src
+- src/index.js - we connect to the api via graphql here
+- src/App.js - routing lives here
+- src/index.css - Global styles go here
+- src/components/ - holds all our components 
+   - src/components/index.js - exports all our components
+   - src/components/NameOfComponent/ - each component exists under components/NameOfComponent
+   	   - src/components/NameOfComponent/index.js - component code //we will also create our graphql queries here at the component level.
+   	   - src/components/NameOfComponent/style.css - component specific styles
 
 
 
