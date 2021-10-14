@@ -8,7 +8,7 @@ import {
   RouteComponentProps,
   useParams
 } from "react-router-dom";
-import {Home, Dashboard} from './components'
+import {Home, Dashboard, Projects, People, Locker, Wip} from './components'
 
 
 const NoMatchPage = () => {
@@ -44,19 +44,26 @@ render() {
     <div className="App">
       <Switch>
         <Route exact path="/">
-
             <Home />
-
         </Route>
         <Route exact path="/dashboard">
-
             <Dashboard />
-
         </Route>
+        <Route exact path="/projects">
+            <Projects />
+        </Route>
+        <Route exact path="/people">
+            <People />
+        </Route>
+        <Route exact path="/locker">
+            <Locker />
+        </Route>
+        <Route exact path="/Wip">
+            <Wip />
+        </Route>
+
         <Route exact path="/profile/:block">
-
            <h1>placeholder</h1>
-
         </Route>
         <Route component={NoMatchPage} />
       </Switch>

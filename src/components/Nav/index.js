@@ -15,11 +15,11 @@ function Nav() {
   return (
     <div className="main-menu">
       <ul>
-        <li><a href="">HOME</a></li>
-        <li><a href="">PROJECTS</a></li>
-        <li><a href="">WIP</a></li>
-        <li><a href="">PEOPLE</a></li>
-        <li><a href="">LOCKER</a></li>
+        <li><a href="/Dashboard">HOME</a></li>
+        <li><a href="/Projects">PROJECTS</a></li>
+        <li><a href="/Wip">WIP</a></li>
+        <li><a href="/People">PEOPLE</a></li>
+        <li><a href="/Locker">LOCKER</a></li>
       </ul>
     </div>
   );

@@ -21,7 +21,7 @@ function Header() {
   return (
     <>
     <div className="header-left">
-      NIKE FUTURE PORTAL APP
+      <a href="/">NIKE FUTURE PORTAL APP</a>
     </div>
     <div className="header-right">
       {new Date().today()}

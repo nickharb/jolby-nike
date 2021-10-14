@@ -1,0 +1,14 @@
+/* DASHBOARD specific styles */
+.Wip.content-wrapper{
+	display: flex;
+	justify-content: space-around;
+	flex-wrap: wrap;
+}
+
+.wip-item{
+	width: 25%;
+	display: inline-block;
+}
+.wip-item img{
+	width: 100%;
+}

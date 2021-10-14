@@ -1,14 +1,15 @@
 /* DASHBOARD specific styles */
-.Dashboard.content-wrapper{
+.Projects.content-wrapper{
 	display: flex;
 	justify-content: space-around;
+	flex-wrap: wrap;
 }
 
-.panel{
+.project{
 	width: 15%;
 	border:1px solid;
 }
-.panel h4{
+.project h4{
 	color:white;
 	display: inline-block;
 	background: black;

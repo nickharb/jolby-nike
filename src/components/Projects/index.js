@@ -16,36 +16,39 @@ import {
 } from "@apollo/client";
 
 
-const TEAMS = gql`
-  query getTeams {
-    teams {
+const PROJECTS = gql`
+  query getProjects {
+    projects {
       id
+      abbreviation
       name
-      projects{
-        id
-        name
-        people {
-          id
-          abbreviation
-        }
-      }
+      portfolioName
+      subtitle
+      tags
+      status
     } 
   }
 `;
 
-function Dashboard() {
-  const { loading, error, data } = useQuery(TEAMS);
+function Projects() {
+  const { loading, error, data } = useQuery(PROJECTS);
   if (loading) return <p>Loading pls wait thank you...</p>;
   if (error) return <p>Error :(</p>;
   console.log(data)
 
-   let teams = data.teams.map(({ id, name,projects }) => (
-      <div key={id} className="panel">
+   let projects = data.projects.map(({ id, name, portfolioName, subtitle, tags, status, abbreviation }) => (
+      <div key={id} className="project">
+        <h4>{abbreviation}</h4>
         <h1>
           {name}
         </h1>
+        <p>{portfolioName}</p>
+        <p>{subtitle}</p>
+        <p>{status}</p>
+        <p>{tags}</p>
+
         <div>
-          {projects.map(function (project) {
+          {/*          {projects.map(function (project) {
                   return (
                     <div key={project.id}>
                       <h4>{project.people[0].abbreviation}</h4>
@@ -53,7 +56,7 @@ function Dashboard() {
                       <p>10</p>
                     </div>
                   );
-          })}
+          })}*/}
         </div>
       </div>
     ));
@@ -64,11 +67,11 @@ function Dashboard() {
      <>
      <Header></Header>
      <Nav></Nav>
-     <div className="Dashboard content-wrapper">
-          {teams}
+     <div className="Projects content-wrapper">
+          {projects}
       </div>
      </>
     );
 }
 
-export default Dashboard
+export default Projects

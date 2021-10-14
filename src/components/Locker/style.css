@@ -1,0 +1,17 @@
+/* Header specific styles */
+
+.profile, .saved-content{
+	position:relative;
+	display: inline-block;
+	border:1px solid;
+}
+.saved-content{
+	width: 60%;
+}
+.profile{
+	width: 25%;
+}
+.Locker.content-wrapper{
+	display: flex;
+	justify-content: space-between;
+}
