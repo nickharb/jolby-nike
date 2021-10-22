@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Header, Nav } from '../';
 import './style.css';
+import andromeda from '../../Images/andromeda.jpeg'
 import {
   BrowserRouter as Router,
   Switch,
@@ -43,6 +44,7 @@ function Dashboard() {
         <h1>
           {name}
         </h1>
+        <img src={andromeda} alt="andromeda" />
         <div>
           {projects.map(function (project) {
                   return (

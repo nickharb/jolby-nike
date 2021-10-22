@@ -1,8 +1,7 @@
 /* DASHBOARD specific styles */
-.Dashboard.content-wrapper{
+.Person.content-wrapper{
 	display: flex;
 	justify-content: space-around;
-	background-image:url('../../Images/andromeda.jpeg');
 }
 img{
 	width: 40px;

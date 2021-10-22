@@ -36,20 +36,8 @@ function People() {
       <div key={id} className="person">
         <h4>{abbreviation}</h4>
         <h1>
-          {name}
+         <a href={"/person/"+id}>{name}</a>
         </h1>
-
-        <div>
-{/*          {projects.map(function (project) {
-                  return (
-                    <div key={project.id}>
-                      <h4>{project.people[0].abbreviation}</h4>
-                      <span>{project.name}</span>
-                      <p>10</p>
-                    </div>
-                  );
-          })}*/}
-        </div>
       </div>
     ));
 
