@@ -16,17 +16,16 @@ import {
 } from "@apollo/client";
 
 
-const TEAMS = gql`
-  query getTeams {
-    teams {
+const PORTFOLIOS = gql`
+  query getPortfolios {
+    portfolios(limit:5) {
       id
       name
-      projects{
+      projects {
         id
         name
-        people {
+        people{
           id
-          abbreviation
         }
       }
     } 
@@ -34,12 +33,12 @@ const TEAMS = gql`
 `;
 
 function Dashboard() {
-  const { loading, error, data } = useQuery(TEAMS);
+  const { loading, error, data } = useQuery(PORTFOLIOS);
   if (loading) return <p>Loading pls wait thank you...</p>;
-  if (error) return <p>Error :(</p>;
+  if (error) return <p>{error}</p>;
   console.log(data)
 
-   let teams = data.teams.map(({ id, name,projects }) => (
+   let teams = data.portfolios.map(({ id, name, projects }) => (
       <div key={id} className="panel">
         <h1>
           {name}
@@ -48,15 +47,16 @@ function Dashboard() {
           {projects.map(function (project) {
                   return (
                     <div key={project.id}>
-                      <h4>{project.people[0].abbreviation}</h4>
+                      <h4></h4>
                       <span>{project.name}</span>
-                      <p>10</p>
+                      <p>{project.people.length}</p>
                     </div>
                   );
           })}
         </div>
       </div>
     ));
+    console.log(teams)
 
 
 

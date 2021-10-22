@@ -16,29 +16,22 @@ import {
 } from "@apollo/client";
 
 
-const EXCHANGE_RATES = gql`
-  query GetExchangeRates {
-    rates(currency: "USD") {
-      currency
-      rate
-    }
-  }
-`;
 
 function Home() {
-   const { loading, error, data } = useQuery(EXCHANGE_RATES);
+
+
     return (
      <>
      <Header></Header>
      <div className="Homepage content-wrapper">
-          <div class="left-panel">
+          <div className="left-panel">
             <div>
             <h3>updates from space:</h3>
-            <div class='updates-carousel'>
-              <div class='slide'>
+            <div className='updates-carousel'>
+              <div className='slide'>
                 Campus will be closed
               </div>
-              <div class='slide'>
+              <div className='slide'>
                 burger weeek wooohoo
               </div>
             </div>
@@ -46,7 +39,7 @@ function Home() {
             <a href="/dashboard">Enter The Portal ></a>
           </div>
       </div>
-     </>
+      </>
     );
 }
 
