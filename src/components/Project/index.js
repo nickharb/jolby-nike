@@ -17,27 +17,64 @@ import {
 } from "@apollo/client";
 import {withRouter, RouteComponentProps} from "react-router";
 
-const PORTFOLIOS = gql`
-  query getPortfolios($id: ID!) {
+const PROJECT = gql`
+  query getProject($id: ID!) {
     project(id: $id) {
       id
       name
+      subtitle
+      portfolioName
+      people{
+        id
+      }
     } 
   }
 `;
+/*    
+knowledgeItems{
+  id
+  mediaLink
+  itemType
+  name
+}
+*/
 
 function Project(props: MyComponentProps)  {
-  const { loading, error, data } = useQuery(PORTFOLIOS,{
+  const { loading, error, data } = useQuery(PROJECT,{
     variables: { id: props.match.params.id }});
   if (loading) return <p>Loading pls wait thank you...</p>;
   if (error) return <p>{error}</p>;
+  console.log(data)
+
+  // let knowledgeItems = data.person.knowledgeItems.map(({ id, mediaLink, itemType, name }) => (
+  //     <>
+  //     {(itemType == "file" && ( mediaLink.includes(".jpeg") || mediaLink.includes(".jpg")) ) ?
+  //     (<div key={id} className="person">
+  //       <h1>
+  //        <a href={"/item/"+id}>{name || mediaLink}</a>
+  //        <img src={mediaLink}/>
+  //       </h1>
+  //     </div>): ""
+  //     }
+  //     </>
+  //   ));
 
     return (
      <>
      <Header></Header>
      <Nav></Nav>
      <div className="Person content-wrapper">
-          <div>{data.project.name}</div>
+          <div class="left-panel">
+            <div>{data.project.name}</div>
+            <div>{data.project.portfolioName}</div>
+            <div>{data.project.subtitle}</div>
+            <div className="contact">
+              {data.project.people.length}
+            </div>
+          </div>
+          <div class="right-panel">
+      {/*      {knowledgeItems}*/}
+          </div>
       </div>
      </>
     );
