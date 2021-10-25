@@ -1,0 +1,23 @@
+/* DASHBOARD specific styles */
+.Dashboard.content-wrapper{
+	display: flex;
+	justify-content: space-around;
+	background-image:url('../../Images/andromeda.jpeg');
+}
+img{
+	width: 40px;
+}
+
+
+.panel{
+	background: white;
+	width: 15%;
+	border:1px solid;
+}
+.panel h4{
+	color:white;
+	display: inline-block;
+	background: black;
+	border-radius:100%;
+	padding:10px;
+}

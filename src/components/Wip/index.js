@@ -37,7 +37,7 @@ function Wip() {
     {(itemType == "file" && ( mediaLink.includes(".jpeg") || mediaLink.includes(".jpg")) ) ?
       (
         <div key={id} className="wip-item">
-           <a href={mediaLink}><img src={mediaLink}/></a>
+           <a href={"/item/"+id}><img src={mediaLink}/></a>
         </div>
         )
      : ""

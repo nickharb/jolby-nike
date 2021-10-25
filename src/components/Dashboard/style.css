@@ -11,13 +11,26 @@
 .Dashboard.content-wrapper{
 	display: flex;
 	justify-content: space-around;
+<<<<<<< HEAD
 	color:white;
 
+=======
+	background-image:url('../../Images/andromeda.jpeg');
+>>>>>>> cf17a794db76cd75699fd8bf8f6c9a87deae4b17
+}
+img{
+	width: 40px;
 }
 
 
+
 .panel{
+<<<<<<< HEAD
 	width: 16%;
+=======
+	background: white;
+	width: 15%;
+>>>>>>> cf17a794db76cd75699fd8bf8f6c9a87deae4b17
 	border:1px solid;
     border-radius: 10px;  
     border-image-slice: 2;
