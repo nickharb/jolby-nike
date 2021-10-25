@@ -33,17 +33,17 @@ function Home() {
      <div className="Homepage content-wrapper">
           <div class="left-panel">
             <div>
-            <h3>updates from space:</h3>
+            <h3>updates from space</h3>
             <div class='updates-carousel'>
               <div class='slide'>
-                Campus will be closed
+                Campus will be closed from August 25th, 2021 – September 2nd, 2021 for mental health and burger week
               </div>
-              <div class='slide'>
-                burger weeek wooohoo
-              </div>
+              
             </div>
             </div>
-            <a href="/dashboard">Enter The Portal ></a>
+            <div class='portal-link'>
+              <a href="/dashboard">Enter The Portal ></a>
+            </div>
           </div>
       </div>
      </>

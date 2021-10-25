@@ -1,17 +1,49 @@
 /* DASHBOARD specific styles */
+@font-face {
+  font-family: 'TTregular';
+  src: local('TTregular'), url(./fonts/TT-Squares-Regular.ttf) format('truetype');
+  /* other formats include: 'woff2', 'truetype, 'opentype',
+                            'embedded-opentype', and 'svg' */
+}
+
+
+
 .Dashboard.content-wrapper{
 	display: flex;
 	justify-content: space-around;
+	color:white;
+
 }
 
+
 .panel{
-	width: 15%;
+	width: 16%;
 	border:1px solid;
+    border-radius: 10px;  
+    border-image-slice: 2;
+    border-image-source: linear-gradient(to right, #0C37B0, #9EF3F3);
+  padding: 25px;
+
 }
+
+
+.panel h1{
+	font-family: TTregular, Helvetica, sans-serif;
+	font-size: 16px;
+	text-align: center;
+}
+
 .panel h4{
-	color:white;
 	display: inline-block;
-	background: black;
 	border-radius:100%;
 	padding:10px;
 }
+
+.panel span{
+	font-family: HN, Helvetica, sans-serif;
+	font-size: 12px;
+}
+
+
+
+

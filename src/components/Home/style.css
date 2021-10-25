@@ -1,10 +1,60 @@
 /* any homepage specific styles can go here */
 
+@font-face {
+
+ font-family: 'HN';
+  src: local('HN'), url(./fonts/HelveticaNeue-Light.ttf) format('truetype');
+
+}
+
 .left-panel{
 	width: calc(50% - 100px);
 	padding:50px;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
-	background: black;
+	font-family: HN, sans-serif;
+	margin: 0;
+
+  	
+	
+}
+
+
+.left-panel h3 {
+	font-family: TTB, sans-serif;
+	letter-spacing: 2px;
+	font-size: 10px;
+	position: absolute;
+  	top: 35%;
+ 	 -ms-transform: translateY(-50%);
+  	transform: translateY(-50%);
+	text-transform: uppercase;
+}
+
+
+.slide {
+	width: 360px;
+	font-size: 30px;
+	letter-spacing: 2px;
+	position: absolute;
+  	top: 50%;
+ 	 -ms-transform: translateY(-50%);
+  	transform: translateY(-50%);
+	
+}
+
+
+.portal-link {
+	margin-top: 97%;
+	bottom: 0;
+	font-family: TTB, sans-serif;	
+	letter-spacing: 2px;
+	font-size: 10px;
+	text-transform: uppercase;
+}
+
+.portal-link a:link{
+	  text-decoration: none;
+
 }

@@ -9,6 +9,12 @@
 	top:0;
 	width: 40vw;
 	left: calc((100vw - 40vw)/2);
+	font-family: TTB, Helvetica, sans-serif;
+	color:white;
+	letter-spacing: 3px;
+	margin-top: 2%;
+	font-size: 12px;
+
 }
 .main-menu li{
 	display: inline-block;
@@ -16,4 +22,14 @@
 
 .main-menu a{
 	text-decoration: none;
+}
+
+.border-line img {
+	 top:0;
+	 left: 0;
+	 padding:0;
+	 display: flex;
+	 position:fixed;
+     max-width: 100%;
+ 	 height: auto;
 }

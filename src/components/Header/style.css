@@ -1,12 +1,61 @@
 /* Header specific styles */
 
+
+@font-face {
+
+ font-family: 'TTB';
+  src: local('TTB'), url(./fonts/TT-Squares-Bold.ttf) format('truetype');
+
+}
+
 .header-left{
 	position: fixed;
 	left:0;
 	top:0;
+	font-family: TTB, Helvetica, sans-serif;
+	color:white;
+	letter-spacing: 2px;
+	margin-top: 2%;
+	margin-left: 3%;
+	font-size: 12px;
+	text-transform: uppercase;
+	width: 300px;
+
+
 }
+
+
+.header-left a:link{
+	  text-decoration: none;
+
+}
+
+
+
 .header-right{
+	text-transform: uppercase;
 	position: fixed;
 	right:0;
 	top:0;
+	font-family: TTB, Helvetica, sans-serif;
+	color:white;
+	letter-spacing: 2px;
+	margin-top: 2%;
+	margin-right: 3%;
+	font-size: 12px;
+	width: 250px;
+
+
+}
+
+.logo-image img {
+	float: left;
+  	padding-right:10px;
+
+}
+
+
+.flag-image img {
+	float: right;
+
 }

@@ -1,9 +1,42 @@
 /* Global styles go here */
 
+
+@font-face {
+  font-family: 'TTregular';
+  src: local('TTregular'), url(./fonts/TT-Squares-Regular.ttf) format('truetype');
+
+  font-family: 'HN';
+  src: local('HN'), url(./fonts/HelveticaNeue-Light.ttf) format('truetype');
+ 
+}
+
+
 body{
-	margin:0;
+	 background: url(./img/stars.svg);
+	 background-color: #000000;
+}
+
+
+h1{
+	font-family: TTregular, Helvetica, sans-serif;
+
+}
+
+h4{
+	font-family: HN, Helvetica, sans-serif;
+	color:white;
 }
 
 .content-wrapper{
 	margin-top:10vh;
+	color:white;
+}
+
+a:visited {
+  color: inherit;
+}
+
+
+a:link {
+  color:white;
 }
