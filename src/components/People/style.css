@@ -1,9 +1,4 @@
-/* DASHBOARD specific styles */
-.Projects.content-wrapper{
-	display: flex;
-	justify-content: space-around;
-	flex-wrap: wrap;
-}
+/* People specific styles */
 
 .person{
 	width: 50%;

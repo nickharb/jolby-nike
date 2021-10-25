@@ -31,7 +31,6 @@
 }
 
 
-
 .header-right{
 	text-transform: uppercase;
 	position: fixed;
@@ -43,7 +42,7 @@
 	margin-top: 2%;
 	margin-right: 3%;
 	font-size: 12px;
-	width: 250px;
+	width: 280px;
 
 
 }
@@ -57,5 +56,6 @@
 
 .flag-image img {
 	float: right;
+	height: 12px;
 
 }

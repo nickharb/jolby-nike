@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { Header, Nav } from '../';
 import './style.css';
-import andromeda from '../../Images/andromeda.jpeg'
 import {
   BrowserRouter as Router,
   Switch,
@@ -63,7 +62,7 @@ function Project(props: MyComponentProps)  {
      <>
      <Header></Header>
      <Nav></Nav>
-     <div className="Person content-wrapper">
+     <div className="Project content-wrapper"> 
           <div class="left-panel">
             <div>{data.project.name}</div>
             <div>{data.project.portfolioName}</div>

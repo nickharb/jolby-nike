@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Header, Nav } from '../';
 import './style.css';
-import andromeda from '../../Images/andromeda.jpeg'
+
 import {
   BrowserRouter as Router,
   Switch,

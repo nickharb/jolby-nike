@@ -1,8 +1,16 @@
-/* DASHBOARD specific styles */
+/* Projects specific styles */
+
+@font-face {
+  font-family: 'TTregular';
+  src: local('TTregular'), url(./fonts/TT-Squares-Regular.ttf) format('truetype');
+
+}
+
 .Projects.content-wrapper{
 	display: flex;
 	justify-content: space-around;
 	flex-wrap: wrap;
+	color: white;
 }
 
 .project{

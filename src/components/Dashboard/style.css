@@ -2,8 +2,7 @@
 @font-face {
   font-family: 'TTregular';
   src: local('TTregular'), url(./fonts/TT-Squares-Regular.ttf) format('truetype');
-  /* other formats include: 'woff2', 'truetype, 'opentype',
-                            'embedded-opentype', and 'svg' */
+
 }
 
 
@@ -11,31 +10,16 @@
 .Dashboard.content-wrapper{
 	display: flex;
 	justify-content: space-around;
-<<<<<<< HEAD
-	color:white;
+}
 
-=======
-	background-image:url('../../Images/andromeda.jpeg');
->>>>>>> cf17a794db76cd75699fd8bf8f6c9a87deae4b17
-}
-img{
-	width: 40px;
-}
 
 
 
 .panel{
-<<<<<<< HEAD
 	width: 16%;
-=======
-	background: white;
-	width: 15%;
->>>>>>> cf17a794db76cd75699fd8bf8f6c9a87deae4b17
-	border:1px solid;
-    border-radius: 10px;  
-    border-image-slice: 2;
-    border-image-source: linear-gradient(to right, #0C37B0, #9EF3F3);
-  padding: 25px;
+	border:1px solid white;
+  border-radius: 10px;  
+  padding: 10px;
 
 }
 
@@ -44,17 +28,23 @@ img{
 	font-family: TTregular, Helvetica, sans-serif;
 	font-size: 16px;
 	text-align: center;
+		color: white;
+
 }
 
 .panel h4{
 	display: inline-block;
 	border-radius:100%;
 	padding:10px;
+		color: white;
+
 }
 
 .panel span{
 	font-family: HN, Helvetica, sans-serif;
 	font-size: 12px;
+		color: white;
+
 }
 
 
