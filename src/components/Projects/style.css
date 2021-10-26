@@ -6,21 +6,121 @@
 
 }
 
-.Projects.content-wrapper{
-	display: flex;
-	justify-content: space-around;
-	flex-wrap: wrap;
-	color: white;
+/*.Projects.content-wrapper{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    color: white;
 }
 
 .project{
-	width: 15%;
-	border:1px solid;
+    width: 15%;
+    border:1px solid;
 }
 .project h4{
-	color:white;
-	display: inline-block;
-	background: black;
-	border-radius:100%;
-	padding:10px;
+    color:white;
+    display: inline-block;
+    background: black;
+    border-radius:100%;
+    padding:10px;
+}*/
+
+.Projects.content-wrapper {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
 }
+
+.Projects .project {
+    width: 310px;
+    border: 1px solid blue;
+    border-radius: 10px;
+    padding: 30px;
+    margin: 15px;
+}
+
+.project-columns {
+    display: flex;
+}
+
+.project-left {
+    margin-right: 15px;
+}
+
+.project-left span {
+    border-radius: 100%;
+    font-size: 20px;
+    color: white;
+    border: 1px solid blue;
+    /*width: 50px;*/
+    /*height: 50px;*/
+    padding: 12px;
+    display: block;
+}
+
+
+
+.project h2 {
+    /*font-family: HN, Helvetica, sans-serif;*/
+    /*margin-left: 60px;*/
+    font-size: 24px;
+    font-weight: 200;
+    margin: 0;
+}
+
+.project h3 {
+    font-family: TTregular, Helvetica, sans-serif;
+    font-size: 12px;
+    color: #777;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    line-height: 1.2;
+}
+
+.people-counter {
+    background-color: #202020;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    width: 35px;
+    border-radius: 5px;
+}
+
+.people-counter img {
+    width: 12px;
+    height: auto;
+    margin-right: 7px;
+}
+
+.people-counter p {
+    font-family: TTregular, Helvetica, sans-serif;
+    font-size: 12px;
+    margin: 0;
+}
+
+/* project meta */
+
+.project-meta {
+    border-top: 1px solid #ccc;
+    padding-top: 20px;
+    margin-top: 20px;
+}
+
+.project-meta p {
+    margin: 0;
+    margin-bottom: 20px;
+}
+
+
+
+
+
+
+
+
+
+
+
+

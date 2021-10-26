@@ -47,20 +47,21 @@ function Dashboard() {
                 {name}
             </h1>
 
-            <div >
+            <div>
             {projects.map(function (project) {
                 return (
-                    <div className="project-wrapper" key={project.id}>
-                        <div className="project-left">
-                            <span>{project.abbreviation}</span>
-                        </div>
-                        <div className="project-right">
-                            <h2>{project.name}</h2>
-                            <h3>{project.portfolioName}</h3>
-                            <div className="people-counter">
-                                <img src={person} alt="Person" /><p>{project.people.length}</p>
+                    <div className="project" key={project.id}>
+                        <div className="project-columns">
+                            <div className="project-left">
+                                <span>{project.abbreviation}</span>
                             </div>
-                            {/*<p>{project.people.length}</p>*/}
+                            <div className="project-right">
+                                <h2>{project.name}</h2>
+                                <h3>{project.portfolioName}</h3>
+                                <div className="people-counter">
+                                    <img src={person} alt="Person" /><p>{project.people.length}</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 );

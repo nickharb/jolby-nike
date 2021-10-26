@@ -7,7 +7,7 @@
 
 
 
-.Dashboard.content-wrapper{
+.Dashboard.content-wrapper {
     display: flex;
     justify-content: center;
 }
@@ -39,6 +39,20 @@ h1.panel-header {
     border-bottom: 1px solid white;
 }
 
+.Dashboard .project {
+    margin-bottom: 30px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid #777;
+}
+
+.project:last-of-type {
+    border: none;
+}
+
+.project-columns {
+    display: flex;
+}
+
 .project-left {
     margin-right: 15px;
 }
@@ -54,18 +68,7 @@ h1.panel-header {
     display: block;
 }
 
-.project-wrapper {
-    display: flex;
-    margin-bottom: 30px;
-    padding-bottom: 30px;
-    border-bottom: 1px solid #777;
-}
-
-.project-wrapper:last-of-type {
-    border: none;
-}
-
-.project-wrapper h2 {
+.project h2 {
     /*font-family: HN, Helvetica, sans-serif;*/
     /*margin-left: 60px;*/
     font-size: 24px;
@@ -73,14 +76,14 @@ h1.panel-header {
     margin: 0;
 }
 
-.project-wrapper h3 {
+.project h3 {
     font-family: TTregular, Helvetica, sans-serif;
     font-size: 12px;
     color: #777;
     letter-spacing: 0.08em;
     text-transform: uppercase;
     margin-top: 5px;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
     line-height: 1.2;
 }
 
