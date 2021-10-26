@@ -1,51 +1,111 @@
 /* DASHBOARD specific styles */
 @font-face {
-  font-family: 'TTregular';
-  src: local('TTregular'), url(./fonts/TT-Squares-Regular.ttf) format('truetype');
+    font-family: 'TTregular';
+    src: local('TTregular'), url(./fonts/TT-Squares-Regular.ttf) format('truetype');
 
 }
 
 
 
 .Dashboard.content-wrapper{
-	display: flex;
-	justify-content: space-around;
+    display: flex;
+    justify-content: center;
+}
+
+.orb {
+    width: 200px;
+    height: 200px;
+    background-color: blue;
+    border-radius: 100%;
+    margin: 0 auto;
+    /*margin-top: 20px;*/
+}
+
+.panel {
+    width: 290px;
+    border:1px solid blue;
+    border-radius: 10px;
+    padding: 30px;
+    margin: 0 15px;
+}
+
+h1.panel-header {
+    font-family: TTregular, Helvetica, sans-serif;
+    font-size: 20px;
+    text-align: center;
+    color: white;
+    margin: 30px auto;
+    padding-bottom: 30px;
+    border-bottom: 1px solid white;
+}
+
+.project-left {
+    margin-right: 15px;
+}
+
+.project-left span {
+    border-radius: 100%;
+    font-size: 20px;
+    color: white;
+    border: 1px solid blue;
+    /*width: 50px;*/
+    /*height: 50px;*/
+    padding: 12px;
+    display: block;
+}
+
+.project-wrapper {
+    display: flex;
+    margin-bottom: 30px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid #777;
+}
+
+.project-wrapper:last-of-type {
+    border: none;
+}
+
+.project-wrapper h2 {
+    /*font-family: HN, Helvetica, sans-serif;*/
+    /*margin-left: 60px;*/
+    font-size: 24px;
+    font-weight: 200;
+    margin: 0;
+}
+
+.project-wrapper h3 {
+    font-family: TTregular, Helvetica, sans-serif;
+    font-size: 12px;
+    color: #777;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    line-height: 1.2;
+}
+
+.people-counter {
+    background-color: #202020;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    width: 35px;
+    border-radius: 5px;
+}
+
+.people-counter img {
+    width: 12px;
+    height: auto;
+    margin-right: 7px;
+}
+
+.people-counter p {
+    font-family: TTregular, Helvetica, sans-serif;
+    font-size: 12px;
+    margin: 0;
 }
 
 
-
-
-.panel{
-	width: 16%;
-	border:1px solid white;
-  border-radius: 10px;  
-  padding: 10px;
-
-}
-
-
-.panel h1{
-	font-family: TTregular, Helvetica, sans-serif;
-	font-size: 16px;
-	text-align: center;
-		color: white;
-
-}
-
-.panel h4{
-	display: inline-block;
-	border-radius:100%;
-	padding:10px;
-		color: white;
-
-}
-
-.panel span{
-	font-family: HN, Helvetica, sans-serif;
-	font-size: 12px;
-		color: white;
-
-}
 
 
 
