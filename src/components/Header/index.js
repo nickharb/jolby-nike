@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import logo from './img/logo.svg'; 
-import flag from './img/flag.svg'; 
+import flag from './img/flag.svg';
 
 
 import './style.css';
@@ -23,20 +23,20 @@ function Header() {
 
 
   return (
-    <>
-    <div className="header-left">
-      <div className="logo-image">
-        <img src={logo} alt="Logo" />
+    <div className="header">
+      <div className="header-left">
+        <div className="logo-image">
+          <img src={logo} alt="Logo" />
+        </div>
+        <a href="/">NIKE FUTURE PORTAL APP</a>
       </div>
-      <a href="/">NIKE FUTURE PORTAL APP</a>
-    </div>
-    <div className="header-right">
-      <div className="flag-image">
-        <img src={flag} alt="Location" />
+      <div className="header-right">
+        <div className="flag-image">
+          <img src={flag} alt="Location" />
+        </div>
+        {new Date().today()}
       </div>
-      {new Date().today()}
     </div>
-    </>
   );
 }
 
