@@ -22,76 +22,128 @@ const PERSON = gql`
             id
             name
             title
+            abbreviation
+            capacity
+            roles
+            talents
+            curiosities
             location {
                 id
                 name
             }
-            projects{
+            projects {
                 id
                 name
                 abbreviation
             }
-        } 
+        }
+        knowledgeItems {
+            id
+            name
+            mediaLink
+            modifiedAt
+            itemType
+            filesize
+            size
+            fileType
+        }
     }
 `;
-/*    
-knowledgeItems{
-    id
-    mediaLink
-    itemType
-    name
-}
-*/
 
 function Person(props: MyComponentProps)  {
     const { loading, error, data } = useQuery(PERSON,{
         variables: { id: props.match.params.id }});
-    if (loading) return <p>Loading pls wait thank you...</p>;
+    if (loading) return <p>Loading...</p>;
     if (error) return <p>{error}</p>;
-    console.log(data.person)
-    let projects = data.person.projects.map(({ id, name, abbreviation }) => (
-            <div key={id} className="person">
-                <h1>
-                 <a href={"/project/"+id}>{abbreviation}</a>
-                </h1>
-            </div>
-        ));
-    // let knowledgeItems = data.person.knowledgeItems.map(({ id, mediaLink, itemType, name }) => (
-    //     <>
-    //     {(itemType == "file" && ( mediaLink.includes(".jpeg") || mediaLink.includes(".jpg")) ) ?
-    //     (<div key={id} className="person">
-    //       <h1>
-    //        <a href={"/item/"+id}>{name || mediaLink}</a>
-    //        <img src={mediaLink}/>
-    //       </h1>
-    //     </div>): ""
-    //     }
-    //     </>
-    //   ));
 
-        return (
-         <>
-         <Header></Header>
-         <Nav></Nav>
-         <div className="Person content-wrapper">
-                    <div class="left-panel">
-                        <div>{data.person.name}</div>
-                        <div>{data.person.title}</div>
-                        <div>{data.person.location.name}</div>
-                        <div className="contact">
-                            <button>email</button>
-                            <button>phone</button>
-                            <button>slack</button>
-                            <button>other</button>
+    Date.prototype.today = function () { 
+        let days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+        let months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
+        return ((months[this.getMonth()]) + " " +  this.getDate() + ", " + this.getFullYear());
+    }
+
+    let projects = data.person.projects.map(({ id, name, abbreviation }) => (
+        <div key={id} className="person-projects">
+            <a href={"/project/"+id}>{abbreviation}</a>
+        </div>
+    ));
+
+    let knowledgeItems = data.knowledgeItems.map(({ id, mediaLink, itemType, name, modifiedAt, filesize, fileType }) => (
+        <>
+            {( itemType == "file" && ( mediaLink.includes(".jpeg") || mediaLink.includes(".jpg")) ) ?
+                (
+                    <div key={id} className="wip-item">
+                        <a href={"/item/"+id}>
+                            <img src={mediaLink}/>
+                        </a>
+                        <a href={"/item/"+id}>
+                            {name}
+                        </a>
+                        <div className="wip-meta">
+                            <p>{itemType} / {filesize} / {new Date(modifiedAt).today()}</p>
                         </div>
-                        {projects}
                     </div>
-                    <div class="right-panel">
-            {/*      {knowledgeItems}*/}
+                ) : ""
+            }
+        </>
+    ));
+
+    return (
+        <>
+            <Header></Header>
+            <Nav></Nav>
+            <div className="Person content-wrapper">
+                <div className="person-wrapper">
+
+                    <div className="left-panel">
+
+                        <div className="project-columns person-section">
+                            <div className="person-left">
+                                <span>{data.person.abbreviation}</span>
+                            </div>
+                            <div className="person-right">
+                                <h1>{data.person.name}</h1>
+                                <h2>{data.person.title}</h2>
+                                <p>{data.person.location.name}</p>
+                            </div>
+                        </div>
+
+                        <div className="person-contact person-section">
+                            <h2>Contact</h2>
+                            <div className="person-columns">
+                                <a href="#">email</a>
+                                <a href="#">phone</a>
+                                <a href="#">slack</a>
+                                <a href="#">other</a>
+                            </div>
+                        </div>
+
+                        <div className="person-projects person-section">
+                            <h2>Projects</h2>
+                            <div className="person-columns">
+                                {projects}
+                            </div>
+                        </div>
+
+                        <div className="person-meta">
+                            <h2>Roles</h2>
+                            <p>{data.person.roles}</p>
+                            <h2>Talents</h2>
+                            <p>{data.person.talents}</p>
+                            <h2>Availability</h2>
+                            <p>Unavailable until {new Date(data.person.capacity).today()}</p>
+                        </div>
+
                     </div>
+                    <div className="right-panel">
+                        <div className="wip-wrapper">
+                            {knowledgeItems}
+                        </div>
+                    </div>
+                </div>
             </div>
-         </>
-        );
+        </>
+    );
 }
 
 interface MyComponentProps extends RouteComponentProps {

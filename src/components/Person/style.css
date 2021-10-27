@@ -1,5 +1,158 @@
 /* Person specific styles */
-.Person.content-wrapper{
-    display: flex;
-    justify-content: space-around;
+
+.Person.content-wrapper {
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-bottom: 100px;
+    margin-top: 80px;
 }
+
+.Person .wip-wrapper {
+    max-height: 4100px;
+}
+
+.Person .wip-item {
+    /*width: 260px;*/
+}
+
+.Person h1 {
+    font-family: HN, Helvetica, sans-serif;
+    font-weight: 200;
+    letter-spacing: 0.06em;
+    margin: 0;
+}
+
+.Person h2 {
+    font-family: TTregular, Helvetica, sans-serif;
+    font-size: 14px;
+    color: #777;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    line-height: 1.2;
+    font-weight: 200;
+}
+
+.Person p {
+    margin-top: 0;
+}
+
+.person-section {
+    margin-bottom: 20px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid #aaa;
+}
+
+.person-columns {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.person-contact {
+    /*margin-bottom: 20px;*/
+}
+
+.person-contact a {
+    background-color: #202020;
+    padding: 5px;
+    width: 85px;
+    border-radius: 5px;
+    text-decoration: none;
+    text-align: center;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+.person-meta p {
+    margin-bottom: 20px;
+}
+
+.person-projects .person-columns {
+    align-items: flex-start;
+    justify-content: start;
+    margin: 0 -10px;
+}
+
+.person-projects a {
+    border-radius: 100%;
+    font-size: 20px;
+    color: white;
+    border: 1px solid white;
+    padding: 12px;
+    display: block;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+.person-wrapper {
+    display: flex;
+    justify-content: space-between;
+    /*flex-direction: column;*/
+    align-items: flex-start;
+    /*flex-wrap: wrap;*/
+}
+
+.left-panel {
+    width: 28%;
+    border: 1px solid #87B3DC;
+    border-radius: 10px;
+    padding: 30px;
+}
+
+.right-panel  {
+    width: 61%;
+    border: 1px solid #87B3DC;
+    border-radius: 10px;
+    padding: 30px;
+}
+
+.person-columns {
+    display: flex;
+}
+
+.person-left {
+    margin-right: 15px;
+}
+
+.person-left span {
+    border-radius: 100%;
+    font-size: 20px;
+    color: white;
+    border: 1px solid #CBF23A;
+    padding: 12px;
+    display: block;
+}
+
+.person-columns h2 {
+    /*font-family: HN, Helvetica, sans-serif;*/
+    /*margin-left: 60px;*/
+    font-size: 24px;
+    font-weight: 200;
+    margin: 0;
+}
+
+.person-columns h3 {
+    font-family: TTregular, Helvetica, sans-serif;
+    font-size: 12px;
+    color: #777;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    line-height: 1.2;
+}
+
+
+
+
+
+
+
+
+
+
+
+

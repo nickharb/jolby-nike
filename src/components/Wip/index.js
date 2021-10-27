@@ -70,7 +70,9 @@ function Wip() {
             <Header></Header>
             <Nav></Nav>
             <div className="Wip content-wrapper">
-                {wips}
+                <div className="wip-wrapper">
+                    {wips}
+                </div>
             </div>
         </>
     );

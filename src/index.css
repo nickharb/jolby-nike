@@ -41,7 +41,8 @@ p {
 }
 
 .content-wrapper{
-    margin-top: 10vh;
+    /*margin-top: 10vh;*/
+    margin-top: 80px;
     padding: 0 30px 100px;
 }
 
