@@ -1,4 +1,33 @@
-/* Index specific styles */
+/* Item specific styles */
+
+.Item .person-left img {
+	width: 100px;
+	height: auto;
+}
+
+.Item .person-right h1 {
+	word-break: break-all;
+}
+
+.Item .right-panel img {
+	width: 100%;
+	height: auto;
+}
+
+.Item button {
+	font-family: TTregular, Helvetica, sans-serif;
+    letter-spacing: 0.12em;
+    border: 0;
+    background-color: #202020;
+    padding: 10px 20px;
+    font-size: 15px;
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 20px;
+    color: white;
+    text-transform: uppercase;
+}
+
 
 
 
