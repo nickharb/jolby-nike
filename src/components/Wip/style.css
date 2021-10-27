@@ -1,14 +1,36 @@
 /* DASHBOARD specific styles */
-.Wip.content-wrapper{
-	display: flex;
-	justify-content: space-around;
-	flex-wrap: wrap;
+.Wip.content-wrapper {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    max-height: 2680px;
+    border: 1px solid blue;
+    border-radius: 10px;
+    padding: 30px;
+    margin-left: 30px;
+    margin-right: 30px;
+    margin-bottom: 100px;
 }
 
-.wip-item{
-	width: 25%;
-	display: inline-block;
+.wip-item {
+    width: 290px;
+    margin: 0 10px;
+    margin-bottom: 30px;
 }
-.wip-item img{
-	width: 100%;
+
+.wip-item a {
+    text-decoration: none;
+    word-break: break-all;
+}
+
+.wip-item img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.wip-item p {
+    margin: 0;
+    margin-top: 5px;
+    font-size: 11px;
 }
