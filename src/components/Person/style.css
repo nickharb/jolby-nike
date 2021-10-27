@@ -20,6 +20,7 @@
     font-weight: 200;
     letter-spacing: 0.06em;
     margin: 0;
+    font-size: 28px;
 }
 
 .Person h2 {
@@ -84,7 +85,7 @@
     padding: 12px;
     display: block;
     text-decoration: none;
-    margin: 0 10px;
+    margin: 10px;
 }
 
 .person-wrapper {
