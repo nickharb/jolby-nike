@@ -79,13 +79,18 @@
 
 .person-projects a {
     border-radius: 100%;
-    font-size: 20px;
+    font-size: 18px;
     color: white;
     border: 1px solid white;
-    padding: 12px;
+    /*padding: 12px;*/
     display: block;
     text-decoration: none;
     margin: 10px;
+    height: 50px;
+    width: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .person-wrapper {
@@ -120,11 +125,16 @@
 
 .person-left span {
     border-radius: 100%;
-    font-size: 20px;
+    font-size: 18px;
     color: white;
     border: 1px solid #CBF23A;
-    padding: 12px;
+    /*padding: 12px;*/
     display: block;
+    height: 50px;
+    width: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .person-columns h2 {
