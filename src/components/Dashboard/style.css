@@ -15,15 +15,20 @@
 .orb {
     width: 200px;
     height: 200px;
-    background-color: blue;
-    border-radius: 100%;
+    /*background-color: #87B3DC;*/
+    /*border-radius: 100%;*/
     margin: 0 auto;
     /*margin-top: 20px;*/
 }
 
+.orb img {
+    width: 100%;
+    height: auto;
+}
+
 .panel {
     width: 290px;
-    border:1px solid blue;
+    border:1px solid #87B3DC;
     border-radius: 10px;
     padding: 30px;
     margin: 0 15px;
@@ -59,14 +64,26 @@ h1.panel-header {
 
 .project-left span {
     border-radius: 100%;
-    font-size: 20px;
+    font-size: 18px;
     color: white;
-    border: 1px solid blue;
-    /*width: 50px;*/
-    /*height: 50px;*/
-    padding: 12px;
-    display: block;
+    border: 1px solid #CBF23A;
+    height: 30px;
+    width: 30px;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
 }
+
+.project-left a,
+.project-right a {
+    text-decoration: none;
+}
+
+.panel:nth-of-type(1) .project-left span { border-color: #3861D3; }
+.panel:nth-of-type(2) .project-left span { border-color: #BF2379; }
+.panel:nth-of-type(4) .project-left span { border-color: #B7F738; }
+.panel:nth-of-type(3) .project-left span { border-color: #EB8824; }
+.panel:nth-of-type(5) .project-left span { border-color: #912DE0; }
 
 .project h2 {
     /*font-family: HN, Helvetica, sans-serif;*/

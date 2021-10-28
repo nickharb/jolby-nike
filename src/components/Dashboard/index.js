@@ -2,6 +2,11 @@ import React, { Component } from 'react';
 import { Header, Nav } from '../';
 import './style.css';
 import person from './img/person.svg';
+import orb1 from './img/orb1.gif';
+import orb2 from './img/orb2.gif';
+import orb3 from './img/orb3.gif';
+import orb4 from './img/orb4.gif';
+import orb5 from './img/orb5.gif';
 import {
     BrowserRouter as Router,
     Switch,
@@ -15,7 +20,6 @@ import {
     useQuery,
     gql
 } from "@apollo/client";
-
 
 const PORTFOLIOS = gql`
     query getPortfolios {
@@ -35,14 +39,19 @@ const PORTFOLIOS = gql`
     }
 `;
 
+
 function Dashboard() {
     const { loading, error, data } = useQuery(PORTFOLIOS);
     if (loading) return <p>Loading...</p>;
     if (error) return <p>{error}</p>;
 
-    let teams = data.portfolios.map(({ id, name, projects }) => (
+    let imagePaths = [orb1,orb2,orb3,orb4,orb5];
+
+    let teams = data.portfolios.map(({ id, name, projects }, index) => (
         <div key={id} className="panel">
-            <div className="orb"></div>
+            <div className="orb">
+                <img src={imagePaths[index]} alt="Orb" />
+            </div>
             <h1 className="panel-header">
                 {name}
             </h1>
@@ -53,10 +62,10 @@ function Dashboard() {
                     <div className="project" key={project.id}>
                         <div className="project-columns">
                             <div className="project-left">
-                                <span>{project.abbreviation}</span>
+                                <span><a href={"/project/"+id}>{project.abbreviation}</a></span>
                             </div>
                             <div className="project-right">
-                                <h2>{project.name}</h2>
+                                <h2><a href={"/project/"+id}>{project.name}</a></h2>
                                 <h3>{project.portfolioName}</h3>
                                 <div className="people-counter">
                                     <img src={person} alt="Person" /><p>{project.people.length}</p>

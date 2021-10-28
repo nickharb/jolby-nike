@@ -59,7 +59,7 @@ function Project(props: MyComponentProps)  {
 
     let people = data.project.people.map(({ id, name, abbreviation }) => (
         <div key={id} className="person-project">
-            <a href={"/project/"+id}>{abbreviation}</a>
+            <a href={"/person/"+id}>{abbreviation}</a>
         </div>
     ));
 
