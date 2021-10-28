@@ -34,7 +34,12 @@
 }
 
 
-.header-right{
+.header-right {
+	/*width: 280px;*/
+	display: flex;
+}
+
+.header-right span {
 	text-transform: uppercase;
 	/*position: fixed;*/
 	/*right:0;*/
@@ -45,9 +50,8 @@
 	/*margin-top: 2%;*/
 	/*margin-right: 3%;*/
 	font-size: 12px;
-	width: 280px;
-
-
+	text-align: right;
+	margin-right: 10px;
 }
 
 .logo-image img {

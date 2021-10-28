@@ -31,10 +31,10 @@ function Header() {
         <a href="/">NIKE FUTURE PORTAL APP</a>
       </div>
       <div className="header-right">
+        <span>{new Date().today()}</span>
         <div className="flag-image">
           <img src={flag} alt="Location" />
         </div>
-        {new Date().today()}
       </div>
     </div>
   );
