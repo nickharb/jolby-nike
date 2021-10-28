@@ -43,10 +43,10 @@ function Projects() {
         <div className="project" key={id}>
             <div className="project-columns">
                 <div className="project-left">
-                    <span>{abbreviation}</span>
+                    <span><a href={"/project/"+id}>{abbreviation}</a></span>
                 </div>
                 <div className="project-right">
-                    <h2>{name}</h2>
+                    <h2><a href={"/project/"+id}>{name}</a></h2>
                     <h3>{portfolioName}</h3>
                     <p>{subtitle}</p>
                     <div className="people-counter">
