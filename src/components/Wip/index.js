@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import { Header, Nav } from '../';
+import { Header, Nav, LockerButton } from '../';
 import './style.css';
+
 import {
     BrowserRouter as Router,
     Switch,
@@ -44,9 +45,9 @@ function Wip() {
 
     let wips = data.knowledgeItems.map(({ id, mediaLink, itemType, name, modifiedAt, filesize, fileType }) => (
         <>
-        {(itemType == "file" && ( mediaLink.includes(".jpeg") || mediaLink.includes(".jpg")) ) ?
+        {(itemType == "file" && ( mediaLink?.includes(".jpeg") || mediaLink?.includes(".jpg")) ) ?
             (
-                <div key={id} className="wip-item">
+                <div id={"wip-item-"+id} key={id} className="wip-item">
                     <a href={"/item/"+id}>
                         <img src={mediaLink}/>
                     </a>
@@ -56,6 +57,7 @@ function Wip() {
                     <div className="wip-meta">
                         <p>{itemType} / {filesize} / {new Date(modifiedAt).today()}</p>
                     </div>
+                  <LockerButton id={id}/>
                 </div>
             )
          : ""

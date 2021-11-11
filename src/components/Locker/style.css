@@ -15,3 +15,10 @@
     display: flex;
     justify-content: space-between;
 }*/
+
+.Locker .wip-item{
+	width:260px;
+}
+.Locker .wip-container{
+	flex-direction: row;
+}

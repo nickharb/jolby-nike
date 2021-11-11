@@ -35,8 +35,22 @@ const LOCKER = gql`
         }
     }
 `;
-
-
+/* function to remove an item from the locker */
+function removeItem(id){
+    let storage = localStorage.getItem("locker");
+    if (storage?.length > 0){
+        storage = storage.split(",")
+        let newStorage = []
+        for (var i = storage.length - 1; i >= 0; i--) {
+            if(storage[i] != id){
+                newStorage.push(storage[i])
+            }
+        }
+        localStorage.setItem("locker", newStorage);
+        document.querySelector("#wip-"+id).style.display = 'none'
+    }
+    
+}
 function Locker(props: MyComponentProps)  {
     const { loading, error, data } = useQuery(LOCKER);
     if (loading) return <p>Loading...</p>;
@@ -53,12 +67,14 @@ function Locker(props: MyComponentProps)  {
             <a href={"/project/"+id}>{abbreviation}</a>
         </div>
     ));
+    /* retrieve locker item ids from localstorage */
+    let lockeritems = localStorage.getItem("locker")?.split(",");
 
     let knowledgeItems = data.knowledgeItems.map(({ id, mediaLink, itemType, name, modifiedAt, filesize, fileType }) => (
         <>
-            {( itemType == "file" && ( mediaLink.includes(".jpeg") || mediaLink.includes(".jpg")) ) ?
+            {( itemType == "file" && ( mediaLink?.includes(".jpeg") || mediaLink?.includes(".jpg")) && lockeritems.includes(id) ) ?
                 (
-                    <div key={id} className="wip-item">
+                    <div key={id} id={"wip-"+id} className="wip-item">
                         <a href={"/item/"+id}>
                             <img src={mediaLink}/>
                         </a>
@@ -67,7 +83,9 @@ function Locker(props: MyComponentProps)  {
                         </a>
                         <div className="wip-meta">
                             <p>{itemType} / {filesize} / {new Date(modifiedAt).today()}</p>
+                        <button onClick={() => removeItem(id)}>x</button>
                         </div>
+                        
                     </div>
                 ) : ""
             }
