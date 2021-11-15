@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Header, Nav, LockerButton } from '../';
 import './style.css';
+import placeholder from './img/placeholder.jpeg';
 import {
     BrowserRouter as Router,
     Switch,
@@ -25,21 +26,22 @@ const PROJECT = gql`
             portfolioName
             tags
             abbreviation
+            knowledgeItems {
+                id
+                name
+                mediaLink
+                modifiedAt
+                itemType
+                filesize
+                size
+                fileType
+                text
+            }
             people {
                 id
                 name
                 abbreviation
             }
-        }
-        knowledgeItems {
-            id
-            name
-            mediaLink
-            modifiedAt
-            itemType
-            filesize
-            size
-            fileType
         }
     }
 `;
@@ -50,6 +52,8 @@ function Project(props: MyComponentProps)  {
         variables: { id: props.match.params.id }});
     if (loading) return <p>Loading...</p>;
     if (error) return <p>{error}</p>;
+
+    console.log(data)
 
     Date.prototype.today = function () { 
         let days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
@@ -63,26 +67,70 @@ function Project(props: MyComponentProps)  {
         </div>
     ));
 
-    let knowledgeItems = data.knowledgeItems.map(({ id, mediaLink, itemType, name, modifiedAt, filesize, fileType }) => (
+    let knowledgeItems = data.project.knowledgeItems.map(({ id, mediaLink, itemType, name, modifiedAt, filesize, fileType, text }) => (
         <>
-            {( itemType == "file" && ( mediaLink?.includes(".jpeg") || mediaLink?.includes(".jpg")) ) ?
-                (
-                    <div id={"wip-item-"+id} key={id} className="wip-item">
-                        <a href={"/item/"+id}>
-                            <img src={mediaLink}/>
-                        </a>
-                        <a href={"/item/"+id}>
-                            {name}
-                        </a>
-                        <div className="wip-meta">
-                            <p>{itemType} / {filesize} / {new Date(modifiedAt).today()}</p>
+            {(() => {
+                if (itemType == "file") {
+                    return (
+                        <div id={"wip-item-"+id} key={id} className="wip-item">
+                            <a href={"/item/"+id}>
+                                <img src={mediaLink}/>
+                            </a>
+                            <div className="wip-meta">
+                                <p>{itemType} / {filesize} / {new Date(modifiedAt).today()}</p>
+                            </div>
+                            <LockerButton id={id} />
                         </div>
-                        <LockerButton id={id} />
-                    </div>
-                ) : ""
-            }
+                    )
+                } else if (itemType == "url") {
+                    return (
+                        <div id={"wip-item-"+id} key={id} className="wip-item">
+                            <a href={mediaLink} target="_blank">
+                                <img src={placeholder} alt="Placeholder" />
+                            </a>
+                            <div className="wip-meta">
+                                <p>{itemType} / {filesize} / {new Date(modifiedAt).today()}</p>
+                            </div>
+                            <LockerButton id={id} />
+                        </div>
+                    )
+                } else {
+                    return (
+                        <div id={"wip-item-"+id} key={id} className="wip-item">
+                            <a href={mediaLink} target="_blank">
+                                <img src={placeholder} alt="Placeholder" />
+                            </a>
+                            <div className="wip-meta">
+                                <p>{itemType} / {new Date(modifiedAt).today()}</p>
+                            </div>
+                            <LockerButton id={id} />
+                        </div>
+                    )
+                }
+            })()}
         </>
     ));
+
+    // let knowledgeItems = data.project.knowledgeItems.map(({ id, mediaLink, itemType, name, modifiedAt, filesize, fileType }) => (
+    //     <>
+    //         {( itemType == "file" && ( mediaLink?.includes(".jpeg") || mediaLink?.includes(".jpg")) ) ?
+    //             (
+    //                 <div id={"wip-item-"+id} key={id} className="wip-item">
+    //                     <a href={"/item/"+id}>
+    //                         <img src={mediaLink}/>
+    //                     </a>
+    //                     <a href={"/item/"+id}>
+    //                         {name}
+    //                     </a>
+    //                     <div className="wip-meta">
+    //                         <p>{itemType} / {filesize} / {new Date(modifiedAt).today()}</p>
+    //                     </div>
+    //                     <LockerButton id={id} />
+    //                 </div>
+    //             ) : ""
+    //         }
+    //     </>
+    // ));
 
     return (
         <>
