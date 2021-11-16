@@ -13,27 +13,18 @@
 }
 
 .orb {
-    /*width: 200px;
-    height: 200px;*/
+    width: 200px;
+    height: 200px;
     /*background-color: #87B3DC;*/
     /*border-radius: 100%;*/
     margin: 0 auto;
     /*margin-top: 20px;*/
 }
 
-
-.sketch {
-    /*position: absolute;
-    display: inline-block;
-    top: 150px; 
-    left: 65px;   
-    margin-top: 20px;*/
-}
-
-/*.orb img {
+.orb img {
     width: 100%;
     height: auto;
-}*/
+}
 
 .panel {
     width: 290px;

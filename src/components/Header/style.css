@@ -12,6 +12,8 @@
 	display: flex;
 	justify-content: space-between;
 	padding: 30px 50px;
+	position: relative;
+	z-index: 999;
 }
 
 .header-left{

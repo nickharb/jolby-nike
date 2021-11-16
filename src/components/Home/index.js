@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
 import { Header } from '../';
 import './style.css';
+
+// import Sketch from 'react-p5';
+// import { ReactP5Wrapper } from "react-p5-wrapper";
+
 import {
     BrowserRouter as Router,
     Switch,
