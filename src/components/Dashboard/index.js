@@ -5,7 +5,6 @@ import './style.css';
 import Sketch from 'react-p5';
 import { ReactP5Wrapper } from "react-p5-wrapper";
 
-
 import person from './img/person.svg';
 import orb1 from './img/orb1.gif';
 import orb2 from './img/orb2.gif';
