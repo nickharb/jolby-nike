@@ -1,10 +1,10 @@
 /* NAV specific styles */
 
 .nav {
-    /*margin-top: -72px;*/
-    position: absolute;
-    top: 0;
-    z-index: 999;
+    margin-top: -72px;
+    /*position: absolute;*/
+    /*position: relative;*/
+    /*z-index: 999;*/
 }
 
 .main-menu {
@@ -32,6 +32,8 @@
 .main-menu li {
     display: inline-block;
     margin: 0 30px;
+    position: relative;
+    z-index: 999;
 }
 
 .main-menu a {
