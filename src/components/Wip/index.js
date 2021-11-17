@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Header, Nav, LockerButton } from '../';
+import { Header, Nav, LockerButton, ItemGrid } from '../';
 import './style.css';
 
 import {
@@ -72,9 +72,13 @@ function Wip() {
             <Header></Header>
             <Nav></Nav>
             <div className="Wip content-wrapper">
-                <div className="wip-wrapper">
+                {/*<div className="wip-wrapper">
                     {wips}
-                </div>
+                </div>*/}
+
+                <ItemGrid>
+                    {wips}
+                </ItemGrid>
             </div>
         </>
     );
