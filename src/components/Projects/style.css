@@ -25,21 +25,53 @@
     padding:10px;
 }*/
 
-.Projects.content-wrapper {
+/*.Projects.content-wrapper {
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
-}
+}*/
 
-.Projects .project {
+/*.Projects .project {
     width: 310px;
     border: 1px solid blue;
     border-radius: 10px;
     padding: 30px;
     margin: 15px;
+}*/
+
+.Projects .project {
+    width: 310px;
+    border-radius: 10px;
+    padding: 30px;
+    margin: 15px;
+    position: relative;
+    z-index: 0;
 }
 
-.project-left span {
+.Projects .project:before {
+    content:"";
+    position:absolute;
+    z-index:-1;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    padding: 2px;
+    border-radius: 15px;
+    -webkit-mask: 
+        linear-gradient(#fff 0 0) content-box, 
+        linear-gradient(#fff 0 0);
+    -webkit-mask-composite: destination-out;
+    mask-composite: exclude;
+}
+
+.Projects .lightsaber-techs:before { background: linear-gradient(to right, #1F35B2, #ACF5F4); }
+.Projects .wookie-weaponry:before { background: linear-gradient(to right, #C22279, #E38EF6); }
+.Projects .jedi-mindtricks:before { background: linear-gradient(to right, #589724, #EBF53B); }
+.Projects .r2s-d2s:before { background: linear-gradient(to right, #D32F09, #F2C858); }
+.Projects .stormtrooper-therapists:before { background: linear-gradient(to right, #4C1282, #C686FA); }
+
+/*.project-left span {
     border-radius: 100%;
     font-size: 20px;
     color: white;
@@ -47,10 +79,51 @@
     width: 50px;
     height: 50px;
     display: flex;
+}*/
+
+.project-left span {
+    border-radius: 100%;
+    font-size: 22px;
+    color: white;
+    /*border: 1px solid #CBF23A;*/
+    border: none !important;
+    height: 30px;
+    width: 30px;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-right: 15px;
 }
 
-.Projects .project:nth-of-type(1), .Projects .project:nth-of-type(1) .project-left span { border-color: #3861D3; }
-.Projects .project:nth-of-type(2), .Projects .project:nth-of-type(2) .project-left span { border-color: #BF2379; }
+.project-left span:before {
+    content:"";
+    position:absolute;
+    z-index:-1;
+    /*top:0;
+    left:0;
+    right:0;
+    bottom:0;*/
+    height: 50px;
+    width: 50px;
+    padding: 2px;
+    border-radius: 100%;
+    -webkit-mask: 
+        linear-gradient(#fff 0 0) content-box, 
+        linear-gradient(#fff 0 0);
+    -webkit-mask-composite: destination-out;
+    mask-composite: exclude;
+}
+
+.Projects .lightsaber-techs .project-left span:before { background: linear-gradient(to right, #1F35B2, #ACF5F4); }
+.Projects .wookie-weaponry .project-left span:before { background: linear-gradient(to right, #C22279, #E38EF6); }
+.Projects .jedi-mindtricks .project-left span:before { background: linear-gradient(to right, #589724, #EBF53B); }
+.Projects .r2s-d2s .project-left span:before { background: linear-gradient(to right, #D32F09, #F2C858); }
+.Projects .stormtrooper-therapists .project-left span:before { background: linear-gradient(to right, #4C1282, #C686FA); }
+
+
+/*.Projects .project:nth-of-type(2), .Projects .project:nth-of-type(2) .project-left span { border-color: #BF2379; }
 .Projects .project:nth-of-type(3), .Projects .project:nth-of-type(3) .project-left span { border-color: #B7F738; }
 .Projects .project:nth-of-type(4), .Projects .project:nth-of-type(4) .project-left span { border-color: #EB8824; }
 .Projects .project:nth-of-type(5), .Projects .project:nth-of-type(5) .project-left span { border-color: #912DE0; }
@@ -73,11 +146,11 @@
 .Projects .project:nth-of-type(22), .Projects .project:nth-of-type(22) .project-left span { border-color: #BF2379; }
 .Projects .project:nth-of-type(23), .Projects .project:nth-of-type(23) .project-left span { border-color: #B7F738; }
 .Projects .project:nth-of-type(24), .Projects .project:nth-of-type(24) .project-left span { border-color: #EB8824; }
-.Projects .project:nth-of-type(25), .Projects .project:nth-of-type(25) .project-left span { border-color: #912DE0; }
+.Projects .project:nth-of-type(25), .Projects .project:nth-of-type(25) .project-left span { border-color: #912DE0; }*/
 
-.project-columns {
+/*.project-columns {
     display: flex;
-}
+}*/
 
 .project-left {
     margin-right: 15px;
