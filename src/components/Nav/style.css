@@ -2,15 +2,18 @@
 
 .nav {
     margin-top: -72px;
+    /*position: absolute;*/
+    /*position: relative;*/
+    /*z-index: 999;*/
 }
 
 .main-menu {
     display: flex;
     justify-content: center;
-    margin-top: -45px;
+    margin-top: -56px;
 }
 
-.main-menu ul{
+.main-menu ul {
     list-style: none;
     padding: 0;
     display: flex;
@@ -26,12 +29,14 @@
     font-size: 12px;
  
 }
-.main-menu li{
+.main-menu li {
     display: inline-block;
     margin: 0 30px;
+    position: relative;
+    z-index: 999;
 }
 
-.main-menu a{
+.main-menu a {
     text-decoration: none;
 }
 

@@ -9,60 +9,62 @@
 }
 
 .header {
-	display: flex;
-	justify-content: space-between;
-	padding: 30px 50px;
+    display: flex;
+    justify-content: space-between;
+    padding: 30px 50px;
+    position: relative;
+    z-index: 999;
 }
 
 .header-left{
-	/*position: fixed;*/
-	/*left:0;*/
-	/*top:0;*/
-	font-family: TTB, Helvetica, sans-serif;
-	color: white;
-	letter-spacing: 2px;
-	/*margin-top: 2%;*/
-	/*margin-left: 3%;*/
-	font-size: 12px;
-	text-transform: uppercase;
-	width: 300px;
+    /*position: fixed;*/
+    /*left:0;*/
+    /*top:0;*/
+    font-family: TTB, Helvetica, sans-serif;
+    color: white;
+    letter-spacing: 2px;
+    /*margin-top: 2%;*/
+    /*margin-left: 3%;*/
+    font-size: 12px;
+    text-transform: uppercase;
+    width: 300px;
 }
 
 
 .header-left a:link{
-	  text-decoration: none;
+      text-decoration: none;
 }
 
 
 .header-right {
-	/*width: 280px;*/
-	display: flex;
+    /*width: 280px;*/
+    display: flex;
 }
 
 .header-right span {
-	text-transform: uppercase;
-	/*position: fixed;*/
-	/*right:0;*/
-	/*top:0;*/
-	font-family: TTB, Helvetica, sans-serif;
-	color:white;
-	letter-spacing: 2px;
-	/*margin-top: 2%;*/
-	/*margin-right: 3%;*/
-	font-size: 12px;
-	text-align: right;
-	margin-right: 10px;
+    text-transform: uppercase;
+    /*position: fixed;*/
+    /*right:0;*/
+    /*top:0;*/
+    font-family: TTB, Helvetica, sans-serif;
+    color:white;
+    letter-spacing: 2px;
+    /*margin-top: 2%;*/
+    /*margin-right: 3%;*/
+    font-size: 12px;
+    text-align: right;
+    margin-right: 10px;
 }
 
 .logo-image img {
-	float: left;
-  	padding-right:10px;
+    float: left;
+    padding-right:10px;
 
 }
 
 
 .flag-image img {
-	float: right;
-	height: 12px;
+    float: right;
+    height: 12px;
 
 }
