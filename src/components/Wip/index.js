@@ -33,6 +33,11 @@ const WIP = gql`
 `;
 
 function Wip() {
+    function getRandomInt(min, max) {
+      min = Math.ceil(min);
+      max = Math.floor(max);
+      return Math.floor(Math.random() * (max - min) + min); //The maximum is exclusive and the minimum is inclusive
+    }
     const { loading, error, data } = useQuery(WIP);
     if (loading) return <p>Loading...</p>;
     if (error) return <p>Error :(</p>;
@@ -43,15 +48,15 @@ function Wip() {
         return ((months[this.getMonth()]) + " " +  this.getDate() + ", " + this.getFullYear());
     }
 
-    let wips = data.knowledgeItems.map(({ id, mediaLink, itemType, name, modifiedAt, filesize, fileType }) => (
-        <>
-        {(itemType == "file" && ( mediaLink?.includes(".jpeg") || mediaLink?.includes(".jpg")) ) ?
-            (
+    let wips = data.knowledgeItems.map(function({ id, mediaLink, itemType, name, modifiedAt, filesize, fileType }) {
+        
+        if(itemType == "file" && ( mediaLink?.includes(".jpeg") || mediaLink?.includes(".jpg")) ){
+           return (
                 <div id={"wip-item-"+id} key={id} className="wip-item">
-                    <a href={"/item/"+id}>
+                    <a key={id+1} href={"/item/"+id}>
                         <img src={mediaLink}/>
                     </a>
-                    <a href={"/item/"+id}>
+                    <a key={id+2} href={"/item/"+id}>
                         {name}
                     </a>
                     <div className="wip-meta">
@@ -60,10 +65,10 @@ function Wip() {
                   <LockerButton id={id}/>
                 </div>
             )
-         : ""
+     
         }
-        </>
-    ));
+  
+    });
 
 
 
@@ -71,7 +76,7 @@ function Wip() {
         <>
             <Header></Header>
             <Nav></Nav>
-            <div className="Wip content-wrapper">
+            <div key={1090} className="Wip content-wrapper">
                 {/*<div className="wip-wrapper">
                     {wips}
                 </div>*/}

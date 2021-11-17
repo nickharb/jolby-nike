@@ -1,43 +1,28 @@
-import React, { Component } from 'react';
+import React, { Component, useRef, useState, useEffect } from 'react';
 import ReactDOM from 'react-dom';
 import Isotope from 'isotope-layout';
 import './style.css';
 
 
 // Container for isotope grid
-class ItemGrid extends Component {
-    constructor(props) {
-        super(props);
-        this.state = { isotope: null };
-    }
+function ItemGrid (props) {
 
-    render() {
-        return(
-            <div className="item-grid">
-                {this.props.children}
-            </div>
-        )
-    }
 
-    // set up isotope
-    componentDidMount() {
-        const node = ReactDOM.findDOMNode(this);
-        if (!this.state.isotope) {
-            this.setState({
-                isotope: new Isotope( node )
-            });
-        } else {
-            this.state.isotope.reloadItems();
-        }
-    }
+   const isoRef = useRef();
+    const [isotope, setIsotope] = useState(null);
 
-    // update isotope layout
-    componentDidUpdate() {
-        if (this.state.isotope) {
-            this.state.isotope.reloadItems();
-            this.state.isotope.layout();
-        }
-    }
+    useEffect(() => {
+        if (isotope)
+            isotope.reloadItems();
+        else
+            setIsotope(new Isotope( isoRef.current ));
+    })
+
+    return (
+        <div ref={isoRef}>
+            {props.children}
+        </div>
+    )
 }
 
 export default ItemGrid;
