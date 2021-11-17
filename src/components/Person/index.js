@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Header, Nav, LockerButton } from '../';
+import Masonry, {ResponsiveMasonry} from "react-responsive-masonry"
 import './style.css';
 import {
     BrowserRouter as Router,
@@ -138,7 +139,10 @@ function Person(props: MyComponentProps)  {
                     </div>
                     <div className="right-panel">
                         <div className="wip-wrapper">
+                        <Masonry columns={3}>
                             {knowledgeItems}
+                        </Masonry>
+                        
                         </div>
                     </div>
                 </div>

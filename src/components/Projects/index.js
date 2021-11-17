@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { Header, Nav, ItemGrid } from '../';
+import { Header, Nav } from '../';
+import Masonry, {ResponsiveMasonry} from "react-responsive-masonry"
 import './style.css';
 import person from './img/person.svg';
 import {
@@ -80,9 +81,10 @@ function Projects() {
                 
 
             <div className="Projects content-wrapper">
-                <ItemGrid>
+                     <Masonry columnsCount={4}>
                     {projects}
-                </ItemGrid>
+                    </Masonry>
+             
             </div>
         </>
     );

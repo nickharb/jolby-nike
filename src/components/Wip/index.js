@@ -1,5 +1,6 @@
-import React, { Component } from 'react';
-import { Header, Nav, LockerButton, ItemGrid } from '../';
+import React, { Component, useState } from 'react';
+import { Header, Nav, LockerButton} from '../';
+import Masonry, {ResponsiveMasonry} from "react-responsive-masonry"
 import './style.css';
 
 import {
@@ -33,6 +34,20 @@ const WIP = gql`
 `;
 
 function Wip() {
+
+    function filterItems(filter){
+
+        let all = document.querySelectorAll(".wip-item");
+        for (var i = all.length - 1; i >= 0; i--) {
+            all[i].classList.remove("hide")
+        }
+        if(filter){
+            let filters = document.querySelectorAll(filter);
+            for (var i = filters.length - 1; i >= 0; i--) {
+                filters[i].classList.add("hide")
+            }
+        }
+    }
     function getRandomInt(min, max) {
       min = Math.ceil(min);
       max = Math.floor(max);
@@ -52,7 +67,7 @@ function Wip() {
         
         if(itemType == "file" && ( mediaLink?.includes(".jpeg") || mediaLink?.includes(".jpg")) ){
            return (
-                <div id={"wip-item-"+id} key={id} className="wip-item">
+                <div id={"wip-item-"+id} key={id} className={`${name.length < 30 ? "rhubarb" : ""} wip-item`}>
                     <a key={id+1} href={"/item/"+id}>
                         <img src={mediaLink}/>
                     </a>
@@ -77,13 +92,15 @@ function Wip() {
             <Header></Header>
             <Nav></Nav>
             <div key={1090} className="Wip content-wrapper">
+            <button onClick={()=> filterItems(".rhubarb")}>filter</button>
+            <button onClick={()=> filterItems(false)}>unfilter</button>
                 {/*<div className="wip-wrapper">
                     {wips}
                 </div>*/}
 
-                <ItemGrid>
+                <Masonry columnsCount={5}>
                     {wips}
-                </ItemGrid>
+                </Masonry>
             </div>
         </>
     );

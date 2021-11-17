@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Header, Nav } from '../';
 import './style.css';
+import Masonry, {ResponsiveMasonry} from "react-responsive-masonry"
 import {
     BrowserRouter as Router,
     Switch,
@@ -72,7 +73,7 @@ function Locker(props: MyComponentProps)  {
 
     let knowledgeItems = data.knowledgeItems.map(({ id, mediaLink, itemType, name, modifiedAt, filesize, fileType }) => (
         <>
-            {( itemType == "file" && ( mediaLink?.includes(".jpeg") || mediaLink?.includes(".jpg")) && lockeritems.includes(id) ) ?
+            {( itemType == "file" && ( mediaLink?.includes(".jpeg") || mediaLink?.includes(".jpg")) && lockeritems?.includes(id) ) ?
                 (
                     <div key={id} id={"wip-"+id} className="wip-item">
                         <a href={"/item/"+id}>
@@ -122,7 +123,9 @@ function Locker(props: MyComponentProps)  {
                     </div>
                     <div className="right-panel">
                         <div className="wip-wrapper">
+                        <Masonry columns={3}>
                             {knowledgeItems}
+                        </Masonry>
                         </div>
                     </div>
                 </div>
