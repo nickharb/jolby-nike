@@ -3,8 +3,8 @@ import { ReactP5Wrapper } from "react-p5-wrapper";
 
 function sketch3 (p) {
 
-    let height = 230;
-    let width = 230;
+    let height = 270;
+    let width = 270;
 
     let g;
     let m;
@@ -12,17 +12,19 @@ function sketch3 (p) {
     let t2 = 0;
     let c_points = [];
 
-    let orbSize = 40;
-
     let color1;
     let color2;
     let color0;
 
-    let lineCount;
-    let lineSpeed;
-
-    let startColor = 255;
-    let speedAnimate = 0.005;
+    let numLines = 40; //number of lines
+    let speed = 0.003; //speed of undulation
+    let uni = 0.03; //uniformity of lines
+    let numPts = 20; //number of points aka smoothness
+    let gradRad = 0.02; //gradient radius
+    let gradMulti = 10;
+    let r = 37; //radius of orb
+    let a = 0;
+    let n = 0;
 
   p.setup = (canvasParentRef) => {
         
@@ -32,20 +34,16 @@ function sketch3 (p) {
             c_points.push(p.radians(x));
         }
 
-        lineCount = 20;
-        lineSpeed = 0.003;
         color0 = p.color(0,0,0);
-        color1 = p.color(42, 165, 56); // dark blue
-        color2 = p.color(158, 243, 43, 100); // light blue
+        color1 = p.color(88, 151, 36); // dark green
+        color2 = p.color(235, 245, 59, 100); // light green
   }
 
   p.draw = function (){
-       p.blendMode(p.BLEND);
+        p.blendMode(p.BLEND);
         p.background(0);
         p.blendMode(p.ADD);
         drawBg();
-        p.colorMode(p.RGB, p.TWO_PI);
-       
   } 
 
 
@@ -53,14 +51,12 @@ function sketch3 (p) {
         p.strokeWeight(1.5);
         p.noFill();
         t1 = 0;
-        t2 = t2 + lineSpeed; //speed
+        t2 = t2 + speed; //speed
 
-        for (let f = 0; f < lineCount; f++) { //number of lines
-            t1 = t1 + 0.03; //uniformity of lines
-            // g = f * 0.01; //gradient radius
-            g = f * 0.01; //gradient radius
-            // m = g*2;
-            m = g * 10;
+        for (let f = 0; f < numLines; f++) { // number of lines
+            t1 = t1 + uni; // uniformity of lines
+            g = f * gradRad; // gradient radius
+            m = g * gradMulti; // gradient multiplier
 
             let c = p.lerpColor(color1, color2, g);
             let h = p.lerpColor(color0, c, m);
@@ -69,7 +65,7 @@ function sketch3 (p) {
 
             p.beginShape();
 
-            let r = orbSize; // size
+            // let r = r; // size
             let a = 0;
             let n = 0;
 

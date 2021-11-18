@@ -25,9 +25,8 @@ function Home() {
 
     let height;
     let width = 620;
-    // var noiseVal = 150;
-    var noiseVal = 150;
-    var cellSize = 10;
+    var noiseVal = 140;
+    var cellSize = 5;
     var zseed = 0;
 
     let color1;
@@ -39,24 +38,24 @@ function Home() {
         p5.createCanvas(width, height).parent(canvasParentRef);
         p5.background(255);
         p5.noStroke();
-        color1 = p5.color(165, 237, 239); // light blue
-        color2 = p5.color(17, 34, 169);  // dark blue
-        // color0 = p5.color(46, 109, 218);
-        color0 = p5.color(0,0,0);
+        color1 = p5.color(158, 243, 243); // light blue
+        color2 = p5.color(12, 55, 176);  // dark blue
+        color0 = p5.color(46, 109, 218);
     }
 
     const draw = (p5) => {
         for (var y=0; y*cellSize < height; y++) {
             for (var x=0; x*cellSize < width; x++) {
-                var fillCol = p5.noise(x/noiseVal, y/noiseVal, zseed);
-                // let c = p5.lerpColor(color1, color2, fillCol*1.3);
-                let c = p5.lerpColor(color1, color2, fillCol*1.5);
+                var fillCol = p5.noise(x/noiseVal, y/noiseVal, zseed)*1.8;
+                let c = p5.lerpColor(color1, color2, fillCol);
                 p5.fill(c);
                 p5.rect(x*cellSize, y*cellSize, cellSize, cellSize);
             }
         }
-        zseed += 0.005;
+        zseed += 0.007;
     }
+
+
 
     return (
         <>

@@ -18,6 +18,9 @@
     /*background-color: #87B3DC;*/
     /*border-radius: 100%;*/
     margin: 0 auto;
+    margin-left: -25px;
+    margin-top: -25px;
+    margin-right: -25px;
     /*margin-top: 20px;*/
 }
 
