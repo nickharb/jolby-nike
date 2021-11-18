@@ -1,18 +1,29 @@
 @keyframes disappear {
-  0%    { opacity:1;max-width: 10000px;max-height: 10000px; margin: 0 10px; margin-bottom: 30px;}
+  0%    { opacity:1;max-width: 10000px;max-height: 10000px;}
   100%  {opacity:0; max-width: 0; max-height: 0; margin:0;}
 }
 @keyframes reappear {
   0%    { opacity:0;max-width: 0; max-height: 0;margin:0;}
-  100%  { opacity:1;max-width: 10000px;max-height: 1000px; margin: 0 10px; margin-bottom: 30px;}
+  100%  { opacity:1;max-width: 10000px;max-height: 1000px;}
 }
+
+
 /*filter styles*/
+
 .wip-item.hide{
-    animation: 1s disappear forwards;
+    animation: .3s disappear forwards;
 }
 .wip-item{
     overflow: hidden;
-    animation: 1s reappear forwards;
+    animation: .3s reappear forwards;
+}
+
+
+
+.test {
+    height: 100px;
+    width: 100px;
+    background-color: blue;
 }
 /* DASHBOARD specific styles */
 .Wip.content-wrapper {
@@ -24,16 +35,8 @@
     margin-bottom: 100px;
 }
 
-.wip-wrapper {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    max-height: 2680px;
-}
-
 .wip-item {
     width: 290px;
-    margin: 0 10px;
     margin-bottom: 30px;
 }
 

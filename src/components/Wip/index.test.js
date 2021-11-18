@@ -1,5 +1,6 @@
 import React, { Component, useState } from 'react';
 import { Header, Nav, LockerButton} from '../';
+// import Masonry, {ResponsiveMasonry} from "react-responsive-masonry"
 import Masonry from 'react-masonry-component';
 import './style.css';
 
@@ -35,6 +36,24 @@ const WIP = gql`
 
 function Wip() {
 
+    function filterItems(filter){
+
+        let all = document.querySelectorAll(".wip-item");
+        for (var i = all.length - 1; i >= 0; i--) {
+            all[i].classList.remove("hide")
+        }
+        if(filter){
+            let filters = document.querySelectorAll(filter);
+            for (var i = filters.length - 1; i >= 0; i--) {
+                filters[i].classList.add("hide")
+            }
+        }
+    }
+    function getRandomInt(min, max) {
+      min = Math.ceil(min);
+      max = Math.floor(max);
+      return Math.floor(Math.random() * (max - min) + min); //The maximum is exclusive and the minimum is inclusive
+    }
     const { loading, error, data } = useQuery(WIP);
     if (loading) return <p>Loading...</p>;
     if (error) return <p>Error :(</p>;
@@ -49,7 +68,7 @@ function Wip() {
         
         if(itemType == "file" && ( mediaLink?.includes(".jpeg") || mediaLink?.includes(".jpg")) ){
            return (
-                <div id={"wip-item-"+id} key={id} className={`${name.length < 30 ? "filter" : ""} wip-item`}>
+                <div id={"wip-item-"+id} key={id} className={`${name.length < 30 ? "rhubarb" : ""} wip-item`}>
                     <a key={id+1} href={"/item/"+id}>
                         <img src={mediaLink}/>
                     </a>
@@ -67,41 +86,6 @@ function Wip() {
   
     });
 
-    function filterItems(filter){
-        let all = document.querySelectorAll(".wip-item");
-        for (var i = all.length - 1; i >= 0; i--) {
-            all[i].classList.remove("hide")
-        }
-        if(filter){
-            let filters = document.querySelectorAll(filter);
-            for (var i = filters.length - 1; i >= 0; i--) {
-                filters[i].classList.add("hide")
-            }
-        }
-    }
-
-    const masonryOptions = {
-        transitionDuration: 300,
-        gutter: 20
-    };
-
-
-
-
-    function handleImagesLoaded() {
-        console.log('images loaded');
-    }
-
-    function handleLayoutComplete(laidOutItems) {
-        console.log(laidOutItems);
-    }
-
-    function handleRemoveComplete(removedItems) {
-        console.log(removedItems);
-    }
-
-
-
 
 
     return (
@@ -109,24 +93,15 @@ function Wip() {
             <Header></Header>
             <Nav></Nav>
             <div key={1090} className="Wip content-wrapper">
-
-            <button onClick={()=> filterItems(".filter")}>filter</button>
+            <button onClick={()=> filterItems(".rhubarb")}>filter</button>
             <button onClick={()=> filterItems(false)}>unfilter</button>
-    
-            <Masonry
-                // ref={function(c) {this.masonry = this.masonry || c.masonry;}.bind(this)}
-                ref={function(c) {console.log(c)}.bind(this)}
-                className={'my-gallery-class'} // default ''
-                elementType={'div'} // default 'div'
-                options={masonryOptions} // default {}
-                disableImagesLoaded={false} // default false
-                updateOnEachImageLoad={false} // default false and works only if disableImagesLoaded is false
-                onImagesLoaded={handleImagesLoaded()}
-                onLayoutComplete={laidOutItems => handleLayoutComplete(laidOutItems)}
-                onRemoveComplete={removedItems => handleRemoveComplete(removedItems)}
-            >
-                {wips}
-            </Masonry>
+                {/*<div className="wip-wrapper">
+                    {wips}
+                </div>*/}
+
+                <Masonry columnsCount={5}>
+                    {wips}
+                </Masonry>
             </div>
         </>
     );
