@@ -60,46 +60,48 @@ function Dashboard() {
 
     let teams = data.portfolios.map(({ id, name, projects }, index) => (
         <div key={id} className="panel">
-            <div className="orb">
-             {index == 0 &&
-                <ReactP5Wrapper sketch={sketch} />
-             }
-             {index == 1 &&
-                <ReactP5Wrapper sketch={sketch2} />
-             }
-             {index == 2 &&
-                <ReactP5Wrapper sketch={sketch3} />
-             }
-             {index == 3 &&
-                <ReactP5Wrapper sketch={sketch4} />
-             }
-             {index == 4 &&
-                <ReactP5Wrapper sketch={sketch5} />
-             }
-            </div>
-            <h1 className="panel-header">
-                {name}
-            </h1>
+            <div className="panel-scroll">
+                <div className="orb">
+                 {index == 0 &&
+                    <ReactP5Wrapper sketch={sketch} />
+                 }
+                 {index == 1 &&
+                    <ReactP5Wrapper sketch={sketch2} />
+                 }
+                 {index == 2 &&
+                    <ReactP5Wrapper sketch={sketch3} />
+                 }
+                 {index == 3 &&
+                    <ReactP5Wrapper sketch={sketch4} />
+                 }
+                 {index == 4 &&
+                    <ReactP5Wrapper sketch={sketch5} />
+                 }
+                </div>
+                <h1 className="panel-header">
+                    {name}
+                </h1>
 
-            <div>
-            {projects.map(function (project) {
-                return (
-                    <div className="project" key={project.id}>
-                        <div className="project-columns">
-                            <div className="project-left">
-                                <span><a href={"/project/"+id}>{project.abbreviation}</a></span>
-                            </div>
-                            <div className="project-right">
-                                <h2><a href={"/project/"+id}>{project.name}</a></h2>
-                                <h3>{project.portfolioName}</h3>
-                                <div className="people-counter">
-                                    <img src={person} alt="Person" /><p>{project.people.length}</p>
+                <div>
+                {projects.map(function (project) {
+                    return (
+                        <div className="project" key={project.id}>
+                            <div className="project-columns">
+                                <div className="project-left">
+                                    <span><a href={"/project/"+id}>{project.abbreviation}</a></span>
+                                </div>
+                                <div className="project-right">
+                                    <h2><a href={"/project/"+id}>{project.name}</a></h2>
+                                    <h3>{project.portfolioName}</h3>
+                                    <div className="people-counter">
+                                        <img src={person} alt="Person" /><p>{project.people.length}</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                );
-            })}
+                    );
+                })}
+                </div>
             </div>
         </div>
     ));

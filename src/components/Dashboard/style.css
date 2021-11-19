@@ -40,8 +40,21 @@
 
 .panel {
     width: 290px;
+    /*height: 700px;*/
+    /*overflow-y: scroll;*/
     border-radius: 10px;
-    padding: 30px;
+    /*padding: 30px;*/
+    margin: 0 15px;
+    position: relative;
+    z-index: 0;
+}
+
+.panel-scroll {
+    /*width: 290px;*/
+    height: 700px;
+    overflow-y: scroll;
+    border-radius: 10px;
+    padding: 30px 10px;
     margin: 0 15px;
     position: relative;
     z-index: 0;
