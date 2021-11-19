@@ -28,7 +28,7 @@ function Header() {
         <div className="logo-image">
           <img src={logo} alt="Logo" />
         </div>
-        <a href="/">NIKE FUTURE PORTAL APP</a>
+        <a href="/">NIKE GENESIS</a>
       </div>
       <div className="header-right">
         <span>{new Date().today()}</span>
