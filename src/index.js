@@ -17,7 +17,7 @@ import { getMainDefinition } from '@apollo/client/utilities';
 
 
 const wsLink = new WebSocketLink({
-  uri: 'ws://webapp-tn6y.onrender.com/api/graphql',
+  uri: 'wss://webapp-tn6y.onrender.com/cable',
   options: {
     reconnect: true,
   }
