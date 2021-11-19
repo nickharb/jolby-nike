@@ -7,3 +7,14 @@
 .left-panel {
 	color: white;
 }
+
+.filter-comment .image-link,
+.filter-comment .comment-link {
+	pointer-events: none;
+}
+
+.Person .filters button {
+	font-size: 10px;
+	padding: 5px 10px;
+}
+

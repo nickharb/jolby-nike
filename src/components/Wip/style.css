@@ -20,15 +20,32 @@
 
 
 
-
-/* DASHBOARD specific styles */
 .Wip.content-wrapper {
-    border: 1px solid #87B3DC;
     border-radius: 10px;
     padding: 40px 24px;
     margin-left: 50px;
     margin-right: 50px;
     margin-bottom: 100px;
+    position: relative;
+    z-index: 0;
+}
+
+.Wip.content-wrapper:before {
+    content:"";
+    position:absolute;
+    z-index:-1;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    padding: 2px;
+    border-radius: 10px;
+    background: linear-gradient(to right, #1F35B2, #ACF5F4);
+    -webkit-mask: 
+        linear-gradient(#fff 0 0) content-box, 
+        linear-gradient(#fff 0 0);
+    -webkit-mask-composite: destination-out;
+    mask-composite: exclude;
 }
 
 .wip-item {

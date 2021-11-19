@@ -58,6 +58,10 @@
     padding: 0;
 }
 
+.left-panel:before, .right-panel:before {
+    background: none !important;
+}
+
 
 /* updates carousel */
 

@@ -17,8 +17,10 @@
 }*/
 
 .Locker .wip-item{
-	width:260px;
+	/*width: 260px;*/
+    position: relative;
 }
+
 .Locker .wip-container{
-	flex-direction: row;
+	/*flex-direction: row;*/
 }
