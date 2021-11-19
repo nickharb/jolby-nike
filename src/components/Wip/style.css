@@ -20,16 +20,12 @@
 
 
 
-.test {
-    height: 100px;
-    width: 100px;
-    background-color: blue;
-}
+
 /* DASHBOARD specific styles */
 .Wip.content-wrapper {
     border: 1px solid #87B3DC;
     border-radius: 10px;
-    padding: 40px 15px;
+    padding: 40px 24px;
     margin-left: 50px;
     margin-right: 50px;
     margin-bottom: 100px;
@@ -43,12 +39,36 @@
 .wip-item a {
     text-decoration: none;
     word-break: break-all;
+    display: block;
+    letter-spacing: 0.07em;
+    font-size: 14px;
 }
+
+a.image-link {
+    height: 230px;
+    width: 290px;
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+
+.image-link img {
+    margin-top: -30px;
+}
+
+.filter-doc a.image-link { background-color: #3E6ADC; }
+.filter-miro a.image-link { background-color: #F3CE43; }
+.filter-pdf a.image-link { background-color: #E37D1D; }
+.filter-render a.image-link { background-color: #9324E7; }
+.filter-sheet a.image-link { background-color: #8BD131; }
+.filter-sketch a.image-link { background-color: #DB4FB0; }
+.filter-video a.image-link { background-color: #1F35B2; }
+.filter-comment a.image-link { background-color: #C22279; }
+.filter-url a.image-link { background-color: #4C1282; }
 
 .wip-item img {
     width: 100%;
     height: auto;
-    margin-bottom: 10px;
+    margin-bottom: 7px;
 }
 
 .wip-item p {
@@ -56,3 +76,38 @@
     margin-top: 5px;
     font-size: 11px;
 }
+
+.filters {
+    display: flex;
+    justify-content: right;
+    margin: 0 -5px 30px;
+}
+
+.filters button {
+    margin: 0 5px;
+    background-color: #272727;
+    color: white;
+    font-family: HN, Helvetica, sans-serif;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border: none;
+    padding: 5px 15px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.wip-meta p {
+    font-size: 10px;
+    letter-spacing: 0.1em;
+}
+
+
+
+
+
+
+
+
+
+

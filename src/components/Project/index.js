@@ -1,7 +1,17 @@
 import React, { Component } from 'react';
 import { Header, Nav, LockerButton } from '../';
 import './style.css';
-import placeholder from './img/placeholder.jpeg';
+
+import docImg from './img/doc.svg';
+import miroImg from './img/miro.svg';
+import pdfImg from './img/pdf.svg';
+import renderImg from './img/render.svg';
+import sheetImg from './img/sheet.svg';
+import sketchImg from './img/sketch.svg';
+import videoImg from './img/video.svg';
+import commentImg from './img/comment.svg';
+import urlImg from './img/url.svg';
+
 import {
     BrowserRouter as Router,
     Switch,
@@ -67,70 +77,178 @@ function Project(props: MyComponentProps)  {
         </div>
     ));
 
-    let knowledgeItems = data.project.knowledgeItems.map(({ id, mediaLink, itemType, name, modifiedAt, filesize, fileType, text }) => (
-        <>
-            {(() => {
-                if (itemType == "file") {
-                    return (
-                        <div id={"wip-item-"+id} key={id} className="wip-item">
-                            <a href={"/item/"+id}>
-                                <img src={mediaLink}/>
-                            </a>
-                            <div className="wip-meta">
-                                <p>{itemType} / {filesize} / {new Date(modifiedAt).today()}</p>
-                            </div>
-                            <LockerButton id={id} />
-                        </div>
-                    )
-                } else if (itemType == "url") {
-                    return (
-                        <div id={"wip-item-"+id} key={id} className="wip-item">
-                            <a href={mediaLink} target="_blank">
-                                <img src={placeholder} alt="Placeholder" />
-                            </a>
-                            <div className="wip-meta">
-                                <p>{itemType} / {filesize} / {new Date(modifiedAt).today()}</p>
-                            </div>
-                            <LockerButton id={id} />
-                        </div>
-                    )
-                } else {
-                    return (
-                        <div id={"wip-item-"+id} key={id} className="wip-item">
-                            <a href={mediaLink} target="_blank">
-                                <img src={placeholder} alt="Placeholder" />
-                            </a>
-                            <div className="wip-meta">
-                                <p>{itemType} / {new Date(modifiedAt).today()}</p>
-                            </div>
-                            <LockerButton id={id} />
-                        </div>
-                    )
-                }
-            })()}
-        </>
-    ));
+    // let knowledgeItems = data.project.knowledgeItems.map(({ id, mediaLink, itemType, name, modifiedAt, filesize, fileType, text }) => (
+    let knowledgeItems = data.project.knowledgeItems.map(function({ id, mediaLink, itemType, name, modifiedAt, filesize, fileType, text }) {
+        if (itemType == "file" && (mediaLink?.includes(".jpeg") || mediaLink?.includes(".jpg")) ) {
+            return (
+                <div id={"wip-item-"+id} key={id} className="wip-item filter-image">
+                    <a key={id+1} href={"/item/"+id}>
+                        <img src={mediaLink}/>
+                    </a>
+                    <a key={id+2} href={"/item/"+id}>
+                        {name}
+                    </a>
+                    <div className="wip-meta">
+                        <p>{itemType} / {filesize} / {new Date(modifiedAt).today()}</p>
+                    </div>
+                  <LockerButton id={id}/>
+                </div>
+            )
+        }
 
-    // let knowledgeItems = data.project.knowledgeItems.map(({ id, mediaLink, itemType, name, modifiedAt, filesize, fileType }) => (
-    //     <>
-    //         {( itemType == "file" && ( mediaLink?.includes(".jpeg") || mediaLink?.includes(".jpg")) ) ?
-    //             (
-    //                 <div id={"wip-item-"+id} key={id} className="wip-item">
-    //                     <a href={"/item/"+id}>
-    //                         <img src={mediaLink}/>
-    //                     </a>
-    //                     <a href={"/item/"+id}>
-    //                         {name}
-    //                     </a>
-    //                     <div className="wip-meta">
-    //                         <p>{itemType} / {filesize} / {new Date(modifiedAt).today()}</p>
-    //                     </div>
-    //                     <LockerButton id={id} />
-    //                 </div>
-    //             ) : ""
-    //         }
-    //     </>
-    // ));
+        if (itemType == "file" && (mediaLink?.includes(".blend") || mediaLink?.includes(".obj") || mediaLink?.includes(".fbx")) ) {
+            return (
+                <div id={"wip-item-"+id} key={id} className="wip-item filter-render">
+                    <a className="image-link" key={id+1} href={"/item/"+id}>
+                        <img src={renderImg}/>
+                    </a>
+                    <a key={id+2} href={"/item/"+id}>
+                        {name}
+                    </a>
+                    <div className="wip-meta">
+                        <p>{itemType} / {filesize} / {new Date(modifiedAt).today()}</p>
+                    </div>
+                  <LockerButton id={id}/>
+                </div>
+            )
+        }
+
+        if (itemType == "file" && (mediaLink?.includes(".numbers") || mediaLink?.includes(".xlsx")) ) {
+            return (
+                <div id={"wip-item-"+id} key={id} className="wip-item filter-sheet">
+                    <a className="image-link" key={id+1} href={"/item/"+id}>
+                        <img src={sheetImg}/>
+                    </a>
+                    <a key={id+2} href={"/item/"+id}>
+                        {name}
+                    </a>
+                    <div className="wip-meta">
+                        <p>{itemType} / {filesize} / {new Date(modifiedAt).today()}</p>
+                    </div>
+                  <LockerButton id={id}/>
+                </div>
+            )
+        }
+
+        if (itemType == "file" && (mediaLink?.includes(".sketch")) ) {
+            return (
+                <div id={"wip-item-"+id} key={id} className="wip-item filter-sketch">
+                    <a className="image-link" key={id+1} href={"/item/"+id}>
+                        <img src={sketchImg}/>
+                    </a>
+                    <a key={id+2} href={"/item/"+id}>
+                        {name}
+                    </a>
+                    <div className="wip-meta">
+                        <p>{itemType} / {filesize} / {new Date(modifiedAt).today()}</p>
+                    </div>
+                  <LockerButton id={id}/>
+                </div>
+            )
+        }
+
+        if (itemType == "file" && (mediaLink?.includes(".pdf")) ) {
+            return (
+                <div id={"wip-item-"+id} key={id} className="wip-item filter-pdf">
+                    <a className="image-link" key={id+1} href={"/item/"+id}>
+                        <img src={pdfImg}/>
+                    </a>
+                    <a key={id+2} href={"/item/"+id}>
+                        {name}
+                    </a>
+                    <div className="wip-meta">
+                        <p>{itemType} / {filesize} / {new Date(modifiedAt).today()}</p>
+                    </div>
+                  <LockerButton id={id}/>
+                </div>
+            )
+        }
+
+        if (itemType == "file" && (mediaLink?.includes(".mp4")) ) {
+            return (
+                <div id={"wip-item-"+id} key={id} className="wip-item filter-video">
+                    <a className="image-link" key={id+1} href={"/item/"+id}>
+                        <img src={videoImg}/>
+                    </a>
+                    <a key={id+2} href={"/item/"+id}>
+                        {name}
+                    </a>
+                    <div className="wip-meta">
+                        <p>{itemType} / {filesize} / {new Date(modifiedAt).today()}</p>
+                    </div>
+                  <LockerButton id={id}/>
+                </div>
+            )
+        }
+
+        if (itemType == "file" && (mediaLink?.includes(".docx") || mediaLink?.includes(".pages")) ) {
+            return (
+                <div id={"wip-item-"+id} key={id} className="wip-item filter-doc">
+                    <a className="image-link" key={id+1} href={"/item/"+id}>
+                        <img src={docImg}/>
+                    </a>
+                    <a key={id+2} href={"/item/"+id}>
+                        {name}
+                    </a>
+                    <div className="wip-meta">
+                        <p>{itemType} / {filesize} / {new Date(modifiedAt).today()}</p>
+                    </div>
+                  <LockerButton id={id}/>
+                </div>
+            )
+        }
+
+        if (itemType == "miro") {
+            return (
+                <div id={"wip-item-"+id} key={id} className="wip-item filter-miro">
+                    <a className="image-link" key={id+1} href={"/item/"+id}>
+                        <img src={miroImg}/>
+                    </a>
+                    <a key={id+2} href={"/item/"+id}>
+                        {name}
+                    </a>
+                    <div className="wip-meta">
+                        <p>{itemType} / {filesize} / {new Date(modifiedAt).today()}</p>
+                    </div>
+                  <LockerButton id={id}/>
+                </div>
+            )
+        }
+
+        if (itemType == "comment") {
+            return (
+                <div id={"wip-item-"+id} key={id} className="wip-item filter-comment">
+                    <a className="image-link" key={id+1} href={"/item/"+id}>
+                        <img src={commentImg}/>
+                    </a>
+                    <a key={id+2} href={"/item/"+id}>
+                        {name}
+                    </a>
+                    <div className="wip-meta">
+                        <p>{itemType} / {filesize} / {new Date(modifiedAt).today()}</p>
+                    </div>
+                  <LockerButton id={id}/>
+                </div>
+            )
+        }
+
+        if (itemType == "url") {
+            return (
+                <div id={"wip-item-"+id} key={id} className="wip-item filter-url">
+                    <a className="image-link" key={id+1} href={"/item/"+id}>
+                        <img src={urlImg}/>
+                    </a>
+                    <a key={id+2} href={"/item/"+id}>
+                        {name}
+                    </a>
+                    <div className="wip-meta">
+                        <p>{itemType} / {filesize} / {new Date(modifiedAt).today()}</p>
+                    </div>
+                  <LockerButton id={id}/>
+                </div>
+            )
+        }
+    });
 
     return (
         <>
