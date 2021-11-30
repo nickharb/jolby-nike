@@ -78,9 +78,9 @@ a.image-link {
 .filter-render a.image-link { background-color: #9324E7; }
 .filter-sheet a.image-link { background-color: #8BD131; }
 .filter-sketch a.image-link { background-color: #DB4FB0; }
-.filter-video a.image-link { background-color: #1F35B2; }
-.filter-comment a.image-link { background-color: #C22279; }
-.filter-url a.image-link { background-color: #4C1282; }
+.filter-video a.image-link { background-color: #F52B01; }
+.filter-comment a.image-link { background-color: #000000; }
+.filter-url a.image-link { background-color: #B3B3B3; }
 
 .wip-item img {
     width: 100%;

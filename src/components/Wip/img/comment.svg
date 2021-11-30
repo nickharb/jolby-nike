@@ -3,15 +3,14 @@
 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 viewBox="0 0 1080 1080" style="enable-background:new 0 0 1080 1080;" xml:space="preserve">
 <style type="text/css">
-	.st0{fill:#FFFFFF;}
+	.st0{fill:none;stroke:#FFFFFF;stroke-width:4;stroke-miterlimit:10;}
 </style>
 <g>
-	<path class="st0" d="M447.6,583.5H540l57.8,41.2c0.8,0.6,1.8,0.9,2.8,0.9c0.7,0,1.5-0.2,2.1-0.5c1.6-0.8,2.6-2.5,2.5-4.3v-37.4
-		h27.2c2.6,0,4.8-2.1,4.8-4.8c0,0,0,0,0,0V459c0-2.6-2.1-4.6-4.8-4.6H447.6c-2.6,0-4.8,2-4.8,4.6v119.7
-		C442.9,581.4,445,583.5,447.6,583.5C447.6,583.5,447.6,583.5,447.6,583.5z M452.4,464h175.1v109.9h-27c-2.7,0-4.9,2.1-5,4.8v32.8
-		l-51.4-36.7c-0.8-0.6-1.7-0.9-2.7-0.9h-89.1V464z"/>
-	<rect x="477.2" y="483.1" class="st0" width="54" height="9.6"/>
-	<rect x="477.2" y="512.3" class="st0" width="125.5" height="9.6"/>
-	<rect x="477.2" y="541.1" class="st0" width="125.5" height="9.6"/>
+	<polygon class="st0" points="640.1,594.4 604.9,594.4 604.9,639 544.2,594.4 439.9,594.4 439.9,464 640.1,464 	"/>
+	<g>
+		<line class="st0" x1="475.1" y1="496.6" x2="540" y2="496.6"/>
+		<line class="st0" x1="475.1" y1="529.2" x2="604.9" y2="529.2"/>
+		<line class="st0" x1="475.1" y1="561.8" x2="604.9" y2="561.8"/>
+	</g>
 </g>
 </svg>

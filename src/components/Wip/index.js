@@ -303,10 +303,10 @@ function Wip() {
                 <button onClick={()=> filterItems(".filter-miro")}>miro boards</button>
                 <button onClick={()=> filterItems(".filter-doc")}>documents</button>
                 <button onClick={()=> filterItems(".filter-sheet")}>spreadsheets</button>
-                <button onClick={()=> filterItems(".filter-pdf")}>PDF</button>
+                {/*<button onClick={()=> filterItems(".filter-pdf")}>PDF</button>
                 <button onClick={()=> filterItems(".filter-sketch")}>sketch files</button>
                 <button onClick={()=> filterItems(".filter-video")}>videos</button>
-                <button onClick={()=> filterItems(".filter-render")}>3d renders</button>
+                <button onClick={()=> filterItems(".filter-render")}>3d renders</button>*/}
             </div>
             
     

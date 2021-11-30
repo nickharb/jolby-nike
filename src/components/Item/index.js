@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Header, Nav } from '../';
+import { Header, Nav, LockerButton } from '../';
 import './style.css';
 
 import {
@@ -73,7 +73,12 @@ function Item(props: MyComponentProps)  {
                             <p>Owner: {data.knowledgeItem.modifiedByName}</p>
                         </div>
 
-                        <button>Open file in Box</button>
+                        
+                        
+                        <button className="open-file-link"><a key={data.knowledgeItem.id+2} href={data.knowledgeItem.mediaLink} target="_blank">Open file in Box</a></button>
+                        
+
+                        {/*<LockerButton id={data.knowledgeItem.id}/>*/}
 
                     </div>
                     <div className="right-panel">

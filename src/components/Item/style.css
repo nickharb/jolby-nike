@@ -14,7 +14,7 @@
 	height: auto;
 }
 
-.Item button {
+.open-file-link {
 	font-family: TTregular, Helvetica, sans-serif;
     letter-spacing: 0.12em;
     border: 0;
@@ -23,9 +23,22 @@
     font-size: 15px;
     text-align: center;
     margin: 0 auto;
-    margin-top: 20px;
+    margin-top: 40px;
     color: white;
     text-transform: uppercase;
+    display: block;
+}
+
+.open-file-link a {
+    text-decoration: none;
+}
+
+.Item .person-meta {
+    padding-bottom: 15px;
+}
+
+.Item .person-meta p {
+    margin-bottom: 10px;
 }
 
 
