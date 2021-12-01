@@ -44,13 +44,13 @@ function People() {
     if (loading) return <p>Loading...</p>;
     if (error) return <p>Error :(</p>;
 
-    let teams = data.teams.map(({ id, name, people }) => (
+    let teams = data.teams.map(({ id, name, people }, teamIndex) => (
         <div className="team">
             <h3>{name}</h3>
             <div className="people-wrapper">
-                {people.map(function (person) {
+                {people.map(function (person, index) {
                     return (
-                        <div key={person.id} className="person">
+                        <div key={person.id} className="person" style={{'--animation-order': index + (teamIndex * 25)}}>
                             <a href={"/person/"+person.id}>{person.name}</a>
                         </div>
                     );
