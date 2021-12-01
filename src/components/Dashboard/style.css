@@ -175,6 +175,10 @@ h1.panel-header:after {
     margin: 0;
 }
 
+.Dashboard .project h2 {
+    font-size: 22px;
+}
+
 .project h3 {
     font-family: TTregular, Helvetica, sans-serif;
     font-size: 12px;

@@ -39,17 +39,20 @@ const PROJECTS = gql`
     }
 `;
 
+
+
+
+
 function Projects() {
     const { loading, error, data } = useQuery(PROJECTS);
     if (loading) return <p>Loading...</p>;
     if (error) return <p>Error :(</p>;
 
 
-    let projects = data.projects.map(({ id, name, portfolioName, subtitle, tags, status, abbreviation, people }) => (
-
+    let projects = data.projects.map(({ id, name, portfolioName, subtitle, tags, status, abbreviation, people }, index) => (
         
 
-        <div className={`project ${portfolioName.replace(/\s/g , "-").replace(/'/g, '').toLowerCase()}`} key={id}>
+        <div className={`project ${portfolioName.replace(/\s/g , "-").replace(/'/g, '').toLowerCase()}`} style={{'--animation-order': index}} key={id}>
             <div className="project-columns">
                 <div className="project-left">
                     <span><a href={"/project/"+id}>{abbreviation}</a></span>
