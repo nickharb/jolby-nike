@@ -58,6 +58,12 @@ function Dashboard() {
     if (loading) return <p>Loading...</p>;
     if (error) return <p>{error}</p>;
 
+    // fade in content when loaded
+    setTimeout(function() {
+        document.getElementById('root').classList.add('loaded');
+        document.body.classList.add('loaded');
+    }, 1000);
+
     let teams = data.portfolios.map(({ id, name, projects }, index) => (
         <div key={id} className="panel">
             <div className="panel-scroll">

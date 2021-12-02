@@ -9,16 +9,32 @@
  
 }
 
+#root {
+    opacity: 0;
+    background: url(./img/stars.svg);
+}
+
+#root.loaded {
+    opacity: 1;
+    transition: opacity 1.5s;
+}
+
 
 body {
     font-family: HN, Helvetica, sans-serif;
     color: white;
-    background: url(./img/stars.svg);
+    /*background: url(./img/stars.svg);*/
+    background-image: url(./img/oval.svg);
+    background-repeat: no-repeat;
+    background-position: center 400px;
     background-color: #000000;
-    /*width: 1440px;*/
     width: 1680px;
     margin: 0;
     padding: 0;
+}
+
+body.loaded {
+    background-image: none;
 }
 
 
@@ -53,3 +69,6 @@ a:visited {
 a:link {
     color:white;
 }
+
+
+

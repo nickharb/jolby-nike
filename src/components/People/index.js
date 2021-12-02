@@ -44,6 +44,12 @@ function People() {
     if (loading) return <p>Loading...</p>;
     if (error) return <p>Error :(</p>;
 
+    // fade in content when loaded
+    setTimeout(function() {
+        document.getElementById('root').classList.add('loaded');
+        document.body.classList.add('loaded');
+    }, 100);
+
     let teams = data.teams.map(({ id, name, people }, teamIndex) => (
         <div className="team">
             <h3>{name}</h3>

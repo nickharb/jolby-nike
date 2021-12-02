@@ -64,7 +64,11 @@ function Project(props: MyComponentProps)  {
     if (loading) return <p>Loading...</p>;
     if (error) return <p>{error}</p>;
 
-    console.log(data)
+    // fade in content when loaded
+    setTimeout(function() {
+        document.getElementById('root').classList.add('loaded');
+        document.body.classList.add('loaded');
+    }, 1000);
 
     Date.prototype.today = function () { 
         let days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];

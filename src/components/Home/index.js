@@ -23,6 +23,12 @@ import {
 
 function Home() {
 
+    // fade in content when loaded
+    setTimeout(function() {
+        document.getElementById('root').classList.add('loaded');
+        document.body.classList.add('loaded');
+    }, 2000);
+
     let height;
     let width = 620;
     var noiseVal = 140;
@@ -54,7 +60,6 @@ function Home() {
         }
         zseed += 0.007;
     }
-
 
 
     return (

@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, useEffect } from 'react';
 import { Header, Nav } from '../';
 import Masonry, {ResponsiveMasonry} from "react-responsive-masonry"
 import './style.css';
@@ -43,11 +43,18 @@ const PROJECTS = gql`
 
 
 
+
+
 function Projects() {
     const { loading, error, data } = useQuery(PROJECTS);
     if (loading) return <p>Loading...</p>;
     if (error) return <p>Error :(</p>;
 
+    // fade in content when loaded
+    setTimeout(function() {
+        document.getElementById('root').classList.add('loaded');
+        document.body.classList.add('loaded');
+    }, 100);
 
     let projects = data.projects.map(({ id, name, portfolioName, subtitle, tags, status, abbreviation, people }, index) => (
         

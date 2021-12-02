@@ -49,6 +49,12 @@ function Wip() {
     if (loading) return <p>Loading...</p>;
     if (error) return <p>Error :(</p>;
 
+    // fade in content when loaded
+    setTimeout(function() {
+        document.getElementById('root').classList.add('loaded');
+        document.body.classList.add('loaded');
+    }, 2000);
+
     Date.prototype.today = function () { 
         let days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
         let months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
