@@ -9,7 +9,13 @@
  
 }
 
+html, 
+body {
+    height: 100%;
+}
+
 #root {
+    min-height: 100%;
     opacity: 0;
     background: url(./img/stars.svg);
 }
@@ -26,7 +32,7 @@ body {
     /*background: url(./img/stars.svg);*/
     background-image: url(./img/oval.svg);
     background-repeat: no-repeat;
-    background-position: center 400px;
+    background-position: center center;
     background-color: #000000;
     width: 1680px;
     margin: 0;
