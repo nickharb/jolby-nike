@@ -2,7 +2,7 @@
 # yarn lockfile v1
 
 
-"@apollo/client@^3.4.16":
+"@apollo/client@^3.3.6", "@apollo/client@^3.4.16":
   "integrity" "sha512-iF4zEYwvebkri0BZQyv8zfavPfVEafsK0wkOofa6eC2yZu50J18uTutKtC174rjHZ2eyxZ8tV7NvAPKRT+OtZw=="
   "resolved" "https://registry.npmjs.org/@apollo/client/-/client-3.4.16.tgz"
   "version" "3.4.16"
@@ -2277,6 +2277,11 @@
   "integrity" "sha512-nQyp0o1/mNdbTO1PO6kHkwSrmgZ0MT/jCCpNiwbUjGoRN4dlBhqJtoQuCnEOKzgTVwg0ZWiCoQy6SxMebQVh8A=="
   "resolved" "https://registry.npmjs.org/acorn/-/acorn-7.4.1.tgz"
   "version" "7.4.1"
+
+"actioncable@^5.2.6":
+  "integrity" "sha512-ofLHm57nN24zghkl+tQe6IVrZeSJ655lNLQjNQJvtQkeTDqlF30McuMB4o9DqpxdHgW/w0RNWaAQHB6VPlleNQ=="
+  "resolved" "https://registry.npmjs.org/actioncable/-/actioncable-5.2.6.tgz"
+  "version" "5.2.6"
 
 "address@^1.0.1", "address@1.1.2":
   "integrity" "sha512-aT6camzM4xEA54YVJYSqxz1kv4IHnQZRtThJJHhUMRExaU5spC7jX5ugSwTaTgJliIgs4VhZOk7htClvQ/LmRA=="
@@ -5667,6 +5672,14 @@
   "resolved" "https://registry.npmjs.org/graceful-fs/-/graceful-fs-4.2.6.tgz"
   "version" "4.2.6"
 
+"graphql-ruby-client@^1.10.4":
+  "integrity" "sha512-vyFLqvlpcuORU6R7UXhIVmj7y+RiwlyH7q2SVDa89CRzs/VHFCru3/91QoG+qi6cZqIHYnrJoQ8RRiIe4Uzz1w=="
+  "resolved" "https://registry.npmjs.org/graphql-ruby-client/-/graphql-ruby-client-1.10.4.tgz"
+  "version" "1.10.4"
+  dependencies:
+    "glob" "^7.1.4"
+    "minimist" "^1.2.0"
+
 "graphql-tag@^2.12.3":
   "integrity" "sha512-5xNhP4063d16Pz3HBtKprutsPrmHZi5IdUGOWRxA2B6VF7BIRGOHZ5WQvDmJXZuPcBg7rYwaFxvQYjqkSdR3TQ=="
   "resolved" "https://registry.npmjs.org/graphql-tag/-/graphql-tag-2.12.5.tgz"
@@ -5674,7 +5687,7 @@
   dependencies:
     "tslib" "^2.1.0"
 
-"graphql@^15.6.1", "graphql@^15.7.2 || ^16.0.0":
+"graphql@^14.3.1 || ^15.0.0", "graphql@^15.6.1", "graphql@^15.7.2 || ^16.0.0":
   "integrity" "sha512-AnnKk7hFQFmU/2I9YSQf3xw44ctnSFCfp3zE0N6W174gqe9fWG/2rKaKxROK7CcI3XtERpjEKFqts8o319Kf7A=="
   "resolved" "https://registry.npmjs.org/graphql/-/graphql-15.7.2.tgz"
   "version" "15.7.2"
