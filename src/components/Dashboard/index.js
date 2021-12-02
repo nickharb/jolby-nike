@@ -6,7 +6,6 @@ import sketch2 from'./p5/sketch2.js'
 import sketch3 from'./p5/sketch3.js'
 import sketch4 from'./p5/sketch4.js'
 import sketch5 from'./p5/sketch5.js'
-
 import Sketch from 'react-p5';
 import { ReactP5Wrapper } from "react-p5-wrapper";
 
@@ -27,8 +26,26 @@ import {
     InMemoryCache,
     ApolloProvider,
     useQuery,
-    gql
+    gql,
+    useSubscription
 } from "@apollo/client";
+
+const PORTFOLIO_SUBSCRIPTION = gql`
+subscription {
+  newPortfolio {
+    id
+    name
+    projects {
+        id
+        name
+        abbreviation
+        portfolioName
+        people {
+            id
+        }
+    }
+  }
+}`;
 
 const PORTFOLIOS = gql`
     query getPortfolios {
@@ -55,6 +72,10 @@ function Dashboard() {
 
 
     const { loading, error, data } = useQuery(PORTFOLIOS);
+    const { data2, loading2 } = useSubscription(
+    PORTFOLIO_SUBSCRIPTION,
+            { variables: {  } }
+          );
     if (loading) return <p>Loading...</p>;
     if (error) return <p>{error}</p>;
 

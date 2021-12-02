@@ -76,7 +76,7 @@ function LatestPerson({ postID }) {
     { variables: {  } }
   );
   
-  return <h4>{!loading && console.log(data)}</h4>;
+  return <h4>{!loading && console.log(data.newPerson)}</h4>;
 }
 
 

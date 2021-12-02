@@ -14,6 +14,7 @@ import {
     InMemoryCache,
     ApolloProvider,
     useQuery,
+    useSubscription,
     gql
 } from "@apollo/client";
 
@@ -21,7 +22,21 @@ import {
 //     "Stormtrooper Therapists"
 // }
 
-
+const PROJECT_SUBSCRIPTION = gql`
+subscription {
+  newProject {
+    id
+    abbreviation
+    name
+    portfolioName
+    subtitle
+    tags
+    status
+    people {
+        id
+    }
+  }
+}`;
 const PROJECTS = gql`
     query getProjects {
         projects {
@@ -47,6 +62,10 @@ const PROJECTS = gql`
 
 function Projects() {
     const { loading, error, data } = useQuery(PROJECTS);
+    const { data2, loading2 } = useSubscription(
+    PROJECT_SUBSCRIPTION,
+            { variables: {  } }
+          );
     if (loading) return <p>Loading...</p>;
     if (error) return <p>Error :(</p>;
 

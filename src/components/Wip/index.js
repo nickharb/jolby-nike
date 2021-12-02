@@ -24,9 +24,34 @@ import {
     InMemoryCache,
     ApolloProvider,
     useQuery,
+    useSubscription,
     gql
 } from "@apollo/client";
 
+// injecting an example subscription GraphQL query here
+const KNOWLEDGE_SUBSCRIPTION = gql`
+    subscription {
+        newKnowledgeItem {
+            id
+            name
+            mediaLink
+            modifiedAt
+            itemType
+            filesize
+            size
+            fileType
+        }
+    }`;
+
+// subscribe and return
+// function LatestPerson({ postID }) {
+//   const { data, loading } = useSubscription(
+//     PERSON_SUBSCRIPTION,
+//     { variables: {  } }
+//   );
+  
+//   return <h4>{!loading && console.log(data)}</h4>;
+// }
 
 const WIP = gql`
     query getWip{
@@ -46,8 +71,14 @@ const WIP = gql`
 function Wip() {
 
     const { loading, error, data } = useQuery(WIP);
+      const { data2, loading2 } = useSubscription(
+    KNOWLEDGE_SUBSCRIPTION,
+            { variables: {  } }
+          );
     if (loading) return <p>Loading...</p>;
     if (error) return <p>Error :(</p>;
+
+  
 
     // fade in content when loaded
     setTimeout(function() {
@@ -60,8 +91,11 @@ function Wip() {
         let months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
         return ((months[this.getMonth()]) + " " +  this.getDate() + ", " + this.getFullYear());
     }
-
-    let wips = data.knowledgeItems.map(function({ id, mediaLink, itemType, name, modifiedAt, filesize, fileType }) {
+    let wipArray = data.knowledgeItems
+    // if(data2){
+    //     wipArray.shift(data2.newKnowledgeItem)
+    // }
+    let wips = wipArray.map(function({ id, mediaLink, itemType, name, modifiedAt, filesize, fileType }) {
 
         if (itemType == "file" && (mediaLink?.includes(".jpeg") || mediaLink?.includes(".jpg")) ) {
             return (
