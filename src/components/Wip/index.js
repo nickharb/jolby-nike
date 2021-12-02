@@ -199,39 +199,7 @@ function Wip() {
             )
         }
 
-        // if (itemType == "comment") {
-        //     return (
-        //         <div id={"wip-item-"+id} key={id} className="wip-item filter-comment">
-        //             <a className="image-link" key={id+1} href={"/item/"+id}>
-        //                 <img src={commentImg}/>
-        //             </a>
-        //             <a key={id+2} href={"/item/"+id}>
-        //                 {name}
-        //             </a>
-        //             <div className="wip-meta">
-        //                 <p>{itemType} / {filesize} / {new Date(modifiedAt).today()}</p>
-        //             </div>
-        //           <LockerButton id={id}/>
-        //         </div>
-        //     )
-        // }
-
-        // if (itemType == "url") {
-        //     return (
-        //         <div id={"wip-item-"+id} key={id} className="wip-item filter-url">
-        //             <a className="image-link" key={id+1} href={"/item/"+id}>
-        //                 <img src={urlImg}/>
-        //             </a>
-        //             <a key={id+2} href={"/item/"+id}>
-        //                 {name}
-        //             </a>
-        //             <div className="wip-meta">
-        //                 <p>{itemType} / {filesize} / {new Date(modifiedAt).today()}</p>
-        //             </div>
-        //           <LockerButton id={id}/>
-        //         </div>
-        //     )
-        // }
+   
 
     });
     
@@ -275,7 +243,8 @@ function Wip() {
 
     const masonryOptions = {
         transitionDuration: 300,
-        gutter: 20
+        gutter: 21,
+        columnWidth:1
     };
 
 
