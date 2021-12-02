@@ -318,6 +318,25 @@ function Person(props: MyComponentProps)  {
     }
 
 
+    // parse roles and talents
+    
+    let rolesObj = JSON.parse(data.person.roles);
+    let talentsObj = JSON.parse(data.person.talents);
+
+    let roles = rolesObj.join(', ');
+    let talents = talentsObj.join(', ');
+
+    // let roles = rolesObj.map((role) => (
+    //     <li>{role}</li>
+    // ));
+
+    // let talents = talentsObj.map((talent) => (
+    //     <li>{talent}</li>
+    // ));
+
+
+    // return function
+
     return (
         <>
             <Header></Header>
@@ -357,11 +376,9 @@ function Person(props: MyComponentProps)  {
 
                         <div className="person-meta">
                             <h2>Roles</h2>
-                            <p>{data.person.roles}</p>
+                            <p>{roles}</p>
                             <h2>Talents</h2>
-                            <p>{data.person.talents}</p>
-                            {/*<h2>Availability</h2>
-                            <p>Unavailable until {new Date(data.person.capacity).today()}</p>*/}
+                            <p>{talents}</p>
                         </div>
 
                     </div>
