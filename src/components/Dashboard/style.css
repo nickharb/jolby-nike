@@ -67,9 +67,9 @@
     left:0;
     right:0;
     bottom:0;
-    padding: 1.5px;
+    padding: 2px;
     border-radius: 10px;
-    background: linear-gradient(to right, #1F35B2, #ACF5F4);
+    background: linear-gradient(-135deg, #1F35B2, #ACF5F4);
     -webkit-mask: 
         linear-gradient(#fff 0 0) content-box, 
         linear-gradient(#fff 0 0);
@@ -77,11 +77,11 @@
     mask-composite: exclude;
 }
 
-/*.panel:nth-of-type(1):before { background: linear-gradient(to right, #1F35B2, #ACF5F4); }
-.panel:nth-of-type(1):before { background: linear-gradient(to right, #9c20aa, #fb3570); }
-.panel:nth-of-type(1):before { background: linear-gradient(to right, #9c20aa, #fb3570); }
-.panel:nth-of-type(1):before { background: linear-gradient(to right, #9c20aa, #fb3570); }
-.panel:nth-of-type(1):before { background: linear-gradient(to right, #9c20aa, #fb3570); }*/
+/*.panel:nth-of-type(1):before { background: linear-gradient(45deg, #1F35B2, #ACF5F4); }
+.panel:nth-of-type(1):before { background: linear-gradient(45deg, #9c20aa, #fb3570); }
+.panel:nth-of-type(1):before { background: linear-gradient(45deg, #9c20aa, #fb3570); }
+.panel:nth-of-type(1):before { background: linear-gradient(45deg, #9c20aa, #fb3570); }
+.panel:nth-of-type(1):before { background: linear-gradient(45deg, #9c20aa, #fb3570); }*/
 
 h1.panel-header {
     font-family: TTregular, Helvetica, sans-serif;
@@ -94,16 +94,16 @@ h1.panel-header {
 
 h1.panel-header:after {
     content:"";
-    height: 1px;
+    height: 2px;
     display: block;
     margin-top: 30px;
 }
 
-.panel:nth-of-type(1) h1.panel-header:after { background: linear-gradient(to right, #1F35B2, #ACF5F4); }
-.panel:nth-of-type(2) h1.panel-header:after { background: linear-gradient(to right, #C22279, #E38EF6); }
-.panel:nth-of-type(3) h1.panel-header:after { background: linear-gradient(to right, #589724, #EBF53B); }
-.panel:nth-of-type(4) h1.panel-header:after { background: linear-gradient(to right, #D32F09, #F2C858); }
-.panel:nth-of-type(5) h1.panel-header:after { background: linear-gradient(to right, #4C1282, #C686FA); }
+.panel:nth-of-type(1) h1.panel-header:after { background: linear-gradient(45deg, #1F35B2, #ACF5F4); }
+.panel:nth-of-type(2) h1.panel-header:after { background: linear-gradient(45deg, #C22279, #E38EF6); }
+.panel:nth-of-type(3) h1.panel-header:after { background: linear-gradient(45deg, #589724, #EBF53B); }
+.panel:nth-of-type(4) h1.panel-header:after { background: linear-gradient(45deg, #D32F09, #F2C858); }
+.panel:nth-of-type(5) h1.panel-header:after { background: linear-gradient(45deg, #4C1282, #C686FA); }
 
 .Dashboard .project {
     margin-bottom: 30px;
@@ -160,11 +160,11 @@ h1.panel-header:after {
     text-decoration: none;
 }
 
-.panel:nth-of-type(1) .project-left span:before { background: linear-gradient(to right, #1F35B2, #ACF5F4); }
-.panel:nth-of-type(2) .project-left span:before { background: linear-gradient(to right, #C22279, #E38EF6); }
-.panel:nth-of-type(3) .project-left span:before { background: linear-gradient(to right, #589724, #EBF53B); }
-.panel:nth-of-type(4) .project-left span:before { background: linear-gradient(to right, #D32F09, #F2C858); }
-.panel:nth-of-type(5) .project-left span:before { background: linear-gradient(to right, #4C1282, #C686FA); }
+.panel:nth-of-type(1) .project-left span:before { background: linear-gradient(45deg, #1F35B2, #ACF5F4); }
+.panel:nth-of-type(2) .project-left span:before { background: linear-gradient(45deg, #C22279, #E38EF6); }
+.panel:nth-of-type(3) .project-left span:before { background: linear-gradient(45deg, #589724, #EBF53B); }
+.panel:nth-of-type(4) .project-left span:before { background: linear-gradient(45deg, #D32F09, #F2C858); }
+.panel:nth-of-type(5) .project-left span:before { background: linear-gradient(45deg, #4C1282, #C686FA); }
 
 .project h2 {
     /*font-family: HN, Helvetica, sans-serif;*/

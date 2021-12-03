@@ -129,12 +129,16 @@
     bottom:0;
     padding: 2px;
     border-radius: 10px;
-    background: linear-gradient(to right, #1F35B2, #ACF5F4);
+    background: linear-gradient(135deg, #1F35B2, #ACF5F4);
     -webkit-mask: 
         linear-gradient(#fff 0 0) content-box, 
         linear-gradient(#fff 0 0);
     -webkit-mask-composite: destination-out;
     mask-composite: exclude;
+}
+
+.right-panel:before {
+    background: linear-gradient(45deg, #1F35B2, #ACF5F4);
 }
 
 .person-columns {
@@ -172,7 +176,7 @@
     mask-composite: exclude;
 }
 
-.person-left span:before { background: linear-gradient(to right, #589724, #EBF53B); }
+.person-left span:before { background: linear-gradient(-45deg, #589724, #EBF53B); }
 
 .person-columns h2 {
     /*font-family: HN, Helvetica, sans-serif;*/

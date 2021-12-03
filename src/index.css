@@ -18,6 +18,7 @@ body {
     min-height: 100%;
     opacity: 0;
     background: url(./img/stars.svg);
+    padding-bottom: 5px;
 }
 
 #root.loaded {

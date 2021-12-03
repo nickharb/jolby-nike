@@ -58,11 +58,11 @@
     mask-composite: exclude;
 }
 
-.Projects .lightsaber-techs:before { background: linear-gradient(to right, #1F35B2, #ACF5F4); }
-.Projects .wookie-weaponry:before { background: linear-gradient(to right, #C22279, #E38EF6); }
-.Projects .jedi-mindtricks:before { background: linear-gradient(to right, #589724, #EBF53B); }
-.Projects .r2s-d2s:before { background: linear-gradient(to right, #D32F09, #F2C858); }
-.Projects .stormtrooper-therapists:before { background: linear-gradient(to right, #4C1282, #C686FA); }
+.Projects .lightsaber-techs:before { background: linear-gradient(135deg, #1F35B2, #ACF5F4); }
+.Projects .wookie-weaponry:before { background: linear-gradient(135deg, #C22279, #E38EF6); }
+.Projects .jedi-mindtricks:before { background: linear-gradient(135deg, #589724, #EBF53B); }
+.Projects .r2s-d2s:before { background: linear-gradient(135deg, #D32F09, #F2C858); }
+.Projects .stormtrooper-therapists:before { background: linear-gradient(135deg, #4C1282, #C686FA); }
 
 /*.project-left span {
     border-radius: 100%;
@@ -109,11 +109,11 @@
     mask-composite: exclude;
 }
 
-.Projects .lightsaber-techs .project-left span:before { background: linear-gradient(to right, #1F35B2, #ACF5F4); }
-.Projects .wookie-weaponry .project-left span:before { background: linear-gradient(to right, #C22279, #E38EF6); }
-.Projects .jedi-mindtricks .project-left span:before { background: linear-gradient(to right, #589724, #EBF53B); }
-.Projects .r2s-d2s .project-left span:before { background: linear-gradient(to right, #D32F09, #F2C858); }
-.Projects .stormtrooper-therapists .project-left span:before { background: linear-gradient(to right, #4C1282, #C686FA); }
+.Projects .lightsaber-techs .project-left span:before { background: linear-gradient(-45deg, #1F35B2, #ACF5F4); }
+.Projects .wookie-weaponry .project-left span:before { background: linear-gradient(-45deg, #C22279, #E38EF6); }
+.Projects .jedi-mindtricks .project-left span:before { background: linear-gradient(-45deg, #589724, #EBF53B); }
+.Projects .r2s-d2s .project-left span:before { background: linear-gradient(-45deg, #D32F09, #F2C858); }
+.Projects .stormtrooper-therapists .project-left span:before { background: linear-gradient(-45deg, #4C1282, #C686FA); }
 
 
 /*.Projects .project:nth-of-type(2), .Projects .project:nth-of-type(2) .project-left span { border-color: #BF2379; }
