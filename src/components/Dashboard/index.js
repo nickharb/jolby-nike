@@ -68,9 +68,6 @@ const PORTFOLIOS = gql`
 
 function Dashboard() {
 
-
-
-
     const { loading, error, data } = useQuery(PORTFOLIOS);
     const { data2, loading2 } = useSubscription(
     PORTFOLIO_SUBSCRIPTION,
@@ -78,6 +75,9 @@ function Dashboard() {
           );
     if (loading) return <p>Loading...</p>;
     if (error) return <p>{error}</p>;
+
+    // add root class
+    document.getElementById('root').classList.add('dashboard-root');
 
     // fade in content when loaded
     setTimeout(function() {

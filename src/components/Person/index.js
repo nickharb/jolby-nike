@@ -69,6 +69,9 @@ function Person(props: MyComponentProps)  {
     if (loading) return <p>Loading...</p>;
     if (error) return <p>{error}</p>;
 
+    // add root class
+    document.getElementById('root').classList.add('people-root');
+
     // fade in content when loaded
     setTimeout(function() {
         document.getElementById('root').classList.add('loaded');
