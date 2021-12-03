@@ -1,11 +1,18 @@
 /* Header specific styles */
 
+@font-face {
+    font-family: 'HelveticaNeue-Light';
+    src: local('HelveticaNeue-Light'), url(./fonts/HelveticaNeue-Light.ttf) format('truetype');
+}
 
 @font-face {
+    font-family: 'TTregular';
+    src: local('TTregular'), url(./fonts/TT-Squares-Regular.ttf) format('truetype');
+}
 
- font-family: 'TTB';
-  src: local('TTB'), url(./fonts/TT-Squares-Bold.ttf) format('truetype');
-
+@font-face {
+    font-family: 'TTB';
+    src: local('TTB'), url(./fonts/TT-Squares-Bold.ttf) format('truetype');
 }
 
 .header {
@@ -39,6 +46,7 @@
 .header-right {
     /*width: 280px;*/
     display: flex;
+    cursor: pointer;
 }
 
 .header-right span {
@@ -59,12 +67,117 @@
 .logo-image img {
     float: left;
     padding-right:10px;
-
 }
-
 
 .flag-image img {
     float: right;
     height: 12px;
-
 }
+
+
+/* clocks */
+
+.clocks-container {
+    background-color: #202020;
+    position: absolute;
+    top: 70px;
+    right: 50px;
+    border-radius: 10px;
+    border-top-right-radius: 0;
+    transition: opacity 300ms;
+    opacity: 0;
+    color: white;
+    pointer-events: none;
+    display: flex;
+    justify-content: space-between;
+    padding: 30px 20px;
+    width: 400px;
+
+    transition: opacity 200ms, transform 200ms;
+    transform: translate(0, -30px);
+}
+
+.clocks-container.active {
+    transform: translate(0, 0);
+    opacity: 1;
+}
+
+.clocks-container img {
+    height: 50px;
+    width: 50px;
+    position: absolute;
+    top: -20px;
+    right: 0;
+}
+
+.clock {
+    width: 100px;
+    text-align: center;
+    border-right: 1px solid #ccc;
+    margin-right: 20px;
+    padding-right: 20px;
+}
+
+.clock:last-of-type {
+    border: none;
+    margin-right: 0;
+    padding-right: 0;
+}
+
+.clock h3 {
+    font-family: "Helvetica Neue", Helvetica, sans-serif;
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    margin: 0;
+    text-transform: uppercase;
+    font-weight: 400;
+
+    /* text gradient */
+    background-size: 100%;
+    background-repeat: repeat;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; 
+    -moz-background-clip: text;
+    -moz-text-fill-color: transparent;
+}
+
+.clock:nth-of-type(1) h3 { background-image: linear-gradient(45deg, #1F35B2, #ACF5F4); }
+.clock:nth-of-type(2) h3 { background-image: linear-gradient(45deg, #C22279, #E38EF6); }
+.clock:nth-of-type(3) h3 { background-image: linear-gradient(45deg, #589724, #EBF53B); }
+.clock:nth-of-type(4) h3 { background-image: linear-gradient(45deg, #D32F09, #F2C858); }
+
+.clock h4 {
+    font-family: TTregular, Helvetica, sans-serif;
+    font-weight: 200;
+    font-size: 20px;
+    margin: 5px 0;
+}
+
+.clock p {
+    font-family: HelveticaNeue-Light, Helvetica, sans-serif;
+    font-size: 8px;
+    color: #999;
+    letter-spacing: 0.3em;
+    margin: 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
