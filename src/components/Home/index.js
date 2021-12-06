@@ -27,7 +27,17 @@ function Home() {
     setTimeout(function() {
         document.getElementById('root').classList.add('loaded');
         document.body.classList.add('loaded');
-    }, 2000);
+    }, 3000);
+
+    function hideLogin() {
+        document.getElementById('login').classList.add('hidden');
+    }
+
+    document.addEventListener("keyup", function(event) {
+        if (event.keyCode === 13) {
+            hideLogin();
+        }
+    });
 
     let height;
     let width = 620;
@@ -66,6 +76,13 @@ function Home() {
         <>
             <Header></Header>
             <div className="Homepage content-wrapper home-columns">
+
+                <div className="right-panel">
+                    <div className="video-container">
+                        <iframe src="https://player.vimeo.com/video/646207608?h=10f232f9fb&amp;autoplay=1&amp;loop=1;&amp;background=1&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture"></iframe>
+                    </div>
+                </div>
+
                 <div className="left-panel">
                     <div>
                         <div className="plasma-bg">
@@ -77,7 +94,7 @@ function Home() {
 
                             <div className='updates-carousel'>
                                 <div className='slide'>
-                                    <h1>Campus will be closed from August 25th, 2021 – September 2nd, 2021 for mental health and burger week</h1>
+                                    <h1>Welcome to Genesis — A new space for us to discover, make connections, and stay up to date on the work we make together</h1>
                                 </div>
                             </div>
                         </div>
@@ -88,17 +105,28 @@ function Home() {
                     </div>
                 </div>
 
-                <div className="right-panel">
+                
+
+                <div className="login-screen" id="login">
+
                     <div className="video-container">
-                        <iframe src="https://player.vimeo.com/video/646207608?h=10f232f9fb&amp;autoplay=1&amp;loop=1;&amp;background=1&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" title="Nike Swooshilite CloseUp"></iframe>
+                        <iframe src="https://player.vimeo.com/video/646207698?h=032e1ac20b&amp;autoplay=1&amp;loop=1;&amp;background=1&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture"></iframe>
                     </div>
 
-                    {/*<div className="video-container">
-                        <iframe src="https://player.vimeo.com/video/646207698?h=032e1ac20b&amp;autoplay=1&amp;loop=1;&amp;background=1&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" title="Nike Swooshilite Full"></iframe>
-                    </div>*/}
+                    <div className="input-background">
+                        <div className="input-wrapper">
+                            <h3>Username</h3>
+                            <div class="login-input">
+                                <input type="username"></input>
+                            </div>
+                            <h3>Password</h3>
+                            <div class="login-input">
+                                <input type="password"></input>
+                            </div>
+                        </div>
+                    </div>
 
-
-                    {/*<script src="https://player.vimeo.com/api/player.js"></script>*/}
+                    
                 </div>
             </div>
         </>
