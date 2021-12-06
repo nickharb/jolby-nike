@@ -76,7 +76,7 @@ function Projects() {
     setTimeout(function() {
         document.getElementById('root').classList.add('loaded');
         document.body.classList.add('loaded');
-    }, 100);
+    }, 50);
 
     let projects = data.projects.map(({ id, name, portfolioName, subtitle, tags, status, abbreviation, people }, index) => (
         
