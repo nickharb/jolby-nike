@@ -10,11 +10,7 @@ import Sketch from 'react-p5';
 import { ReactP5Wrapper } from "react-p5-wrapper";
 
 import person from './img/person.svg';
-import orb1 from './img/orb1.gif';
-import orb2 from './img/orb2.gif';
-import orb3 from './img/orb3.gif';
-import orb4 from './img/orb4.gif';
-import orb5 from './img/orb5.gif';
+
 import {
     BrowserRouter as Router,
     Switch,
@@ -87,6 +83,7 @@ function Dashboard() {
 
     let teams = data.portfolios.map(({ id, name, projects }, index) => (
         <div key={id} className="panel">
+            <div className="panel-background"></div>
             <div className="panel-scroll">
                 <div className="orb">
                  {index == 0 &&
@@ -139,6 +136,14 @@ function Dashboard() {
             <Nav></Nav>
 
             <div className="Dashboard content-wrapper">
+                <div className="ticker-wrapper">
+                    <div className="ticker-header"><h3>Updates from Space</h3></div>
+                    <div class="ticker-wrap">
+                        <div className="ticker">
+                            <div class="ticker-item">Welcome to Genesis — A new space for us to discover, make connections, and stay up to date on the work we make together</div>
+                        </div>
+                    </div>
+                </div>
                 {teams}
             </div>
         </>
