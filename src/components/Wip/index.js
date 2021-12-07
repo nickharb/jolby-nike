@@ -281,8 +281,8 @@ function Wip() {
 
     const masonryOptions = {
         transitionDuration: 300,
-        gutter: 21,
-        columnWidth:1
+        gutter: 20,
+        columnWidth: 290
     };
 
 

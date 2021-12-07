@@ -298,7 +298,8 @@ function Project(props: MyComponentProps)  {
 
     const masonryOptions = {
         transitionDuration: 300,
-        gutter: 20
+        gutter: 20,
+        columnWidth: 290
     };
 
 
