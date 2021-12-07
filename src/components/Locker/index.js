@@ -130,7 +130,7 @@ function Locker(props: MyComponentProps)  {
         if (itemType == "file" && (mediaLink?.includes(".blend") || mediaLink?.includes(".obj") || mediaLink?.includes(".fbx")) && lockeritems?.includes(id)) {
             return (
                 <div id={"wip-item-"+id} key={id} className="wip-item filter-render">
-                    <a className="image-link" key={id+1} href={"/item/"+id}>
+                    <a className="image-link" key={id+1} href={mediaLink} target="_blank">
                         <img src={renderImg}/>
                     </a>
                     <a key={id+2} href={"/item/"+id}>
@@ -147,7 +147,7 @@ function Locker(props: MyComponentProps)  {
         if (itemType == "file" && (mediaLink?.includes(".numbers") || mediaLink?.includes(".xlsx")) && lockeritems?.includes(id)) {
             return (
                 <div id={"wip-item-"+id} key={id} className="wip-item filter-sheet">
-                    <a className="image-link" key={id+1} href={"/item/"+id}>
+                    <a className="image-link" key={id+1} href={mediaLink} target="_blank">
                         <img src={sheetImg}/>
                     </a>
                     <a key={id+2} href={"/item/"+id}>
@@ -164,7 +164,7 @@ function Locker(props: MyComponentProps)  {
         if (itemType == "file" && (mediaLink?.includes(".sketch")) && lockeritems?.includes(id)) {
             return (
                 <div id={"wip-item-"+id} key={id} className="wip-item filter-sketch">
-                    <a className="image-link" key={id+1} href={"/item/"+id}>
+                    <a className="image-link" key={id+1} href={mediaLink} target="_blank">
                         <img src={sketchImg}/>
                     </a>
                     <a key={id+2} href={"/item/"+id}>
@@ -181,7 +181,7 @@ function Locker(props: MyComponentProps)  {
         if (itemType == "file" && (mediaLink?.includes(".pdf")) && lockeritems?.includes(id)) {
             return (
                 <div id={"wip-item-"+id} key={id} className="wip-item filter-pdf">
-                    <a className="image-link" key={id+1} href={"/item/"+id}>
+                    <a className="image-link" key={id+1} href={mediaLink} target="_blank">
                         <img src={pdfImg}/>
                     </a>
                     <a key={id+2} href={"/item/"+id}>
@@ -198,7 +198,7 @@ function Locker(props: MyComponentProps)  {
         if (itemType == "file" && (mediaLink?.includes(".mp4")) && lockeritems?.includes(id)) {
             return (
                 <div id={"wip-item-"+id} key={id} className="wip-item filter-video">
-                    <a className="image-link" key={id+1} href={"/item/"+id}>
+                    <a className="image-link" key={id+1} href={mediaLink} target="_blank">
                         <img src={videoImg}/>
                     </a>
                     <a key={id+2} href={"/item/"+id}>
@@ -215,7 +215,7 @@ function Locker(props: MyComponentProps)  {
         if (itemType == "file" && (mediaLink?.includes(".docx") || mediaLink?.includes(".pages")) && lockeritems?.includes(id)) {
             return (
                 <div id={"wip-item-"+id} key={id} className="wip-item filter-doc">
-                    <a className="image-link" key={id+1} href={"/item/"+id}>
+                    <a className="image-link" key={id+1} href={mediaLink} target="_blank">
                         <img src={docImg}/>
                     </a>
                     <a key={id+2} href={"/item/"+id}>
@@ -232,7 +232,7 @@ function Locker(props: MyComponentProps)  {
         if (itemType == "miro" && lockeritems?.includes(id)) {
             return (
                 <div id={"wip-item-"+id} key={id} className="wip-item filter-miro">
-                    <a className="image-link" key={id+1} href={"/item/"+id}>
+                    <a className="image-link" key={id+1} href={mediaLink} target="_blank">
                         <img src={miroImg}/>
                     </a>
                     <a key={id+2} href={"/item/"+id}>
@@ -249,7 +249,7 @@ function Locker(props: MyComponentProps)  {
         if (itemType == "comment" && lockeritems?.includes(id)) {
             return (
                 <div id={"wip-item-"+id} key={id} className="wip-item filter-comment">
-                    <a className="image-link" key={id+1} href={"/item/"+id}>
+                    <a className="image-link" key={id+1} href={mediaLink} target="_blank">
                         <img src={commentImg}/>
                     </a>
                     <a key={id+2} href={"/item/"+id}>

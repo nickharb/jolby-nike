@@ -107,7 +107,7 @@ function Project(props: MyComponentProps)  {
         if (itemType == "file" && (mediaLink?.includes(".blend") || mediaLink?.includes(".obj") || mediaLink?.includes(".fbx")) ) {
             return (
                 <div id={"wip-item-"+id} key={id} className="wip-item filter-render">
-                    <a className="image-link" key={id+1} href={"/item/"+id}>
+                    <a className="image-link" key={id+1} href={mediaLink} target="_blank">
                         <img src={renderImg}/>
                     </a>
                     <a key={id+2} href={"/item/"+id}>
@@ -124,7 +124,7 @@ function Project(props: MyComponentProps)  {
         if (itemType == "file" && (mediaLink?.includes(".numbers") || mediaLink?.includes(".xlsx")) ) {
             return (
                 <div id={"wip-item-"+id} key={id} className="wip-item filter-sheet">
-                    <a className="image-link" key={id+1} href={"/item/"+id}>
+                    <a className="image-link" key={id+1} href={mediaLink} target="_blank">
                         <img src={sheetImg}/>
                     </a>
                     <a key={id+2} href={"/item/"+id}>
@@ -141,7 +141,7 @@ function Project(props: MyComponentProps)  {
         if (itemType == "file" && (mediaLink?.includes(".sketch")) ) {
             return (
                 <div id={"wip-item-"+id} key={id} className="wip-item filter-sketch">
-                    <a className="image-link" key={id+1} href={"/item/"+id}>
+                    <a className="image-link" key={id+1} href={mediaLink} target="_blank">
                         <img src={sketchImg}/>
                     </a>
                     <a key={id+2} href={"/item/"+id}>
@@ -158,7 +158,7 @@ function Project(props: MyComponentProps)  {
         if (itemType == "file" && (mediaLink?.includes(".pdf")) ) {
             return (
                 <div id={"wip-item-"+id} key={id} className="wip-item filter-pdf">
-                    <a className="image-link" key={id+1} href={"/item/"+id}>
+                    <a className="image-link" key={id+1} href={mediaLink} target="_blank">
                         <img src={pdfImg}/>
                     </a>
                     <a key={id+2} href={"/item/"+id}>
@@ -175,7 +175,7 @@ function Project(props: MyComponentProps)  {
         if (itemType == "file" && (mediaLink?.includes(".mp4")) ) {
             return (
                 <div id={"wip-item-"+id} key={id} className="wip-item filter-video">
-                    <a className="image-link" key={id+1} href={"/item/"+id}>
+                    <a className="image-link" key={id+1} href={mediaLink} target="_blank">
                         <img src={videoImg}/>
                     </a>
                     <a key={id+2} href={"/item/"+id}>
@@ -192,7 +192,7 @@ function Project(props: MyComponentProps)  {
         if (itemType == "file" && (mediaLink?.includes(".docx") || mediaLink?.includes(".pages")) ) {
             return (
                 <div id={"wip-item-"+id} key={id} className="wip-item filter-doc">
-                    <a className="image-link" key={id+1} href={"/item/"+id}>
+                    <a className="image-link" key={id+1} href={mediaLink} target="_blank">
                         <img src={docImg}/>
                     </a>
                     <a key={id+2} href={"/item/"+id}>
@@ -209,7 +209,7 @@ function Project(props: MyComponentProps)  {
         if (itemType == "miro") {
             return (
                 <div id={"wip-item-"+id} key={id} className="wip-item filter-miro">
-                    <a className="image-link" key={id+1} href={"/item/"+id}>
+                    <a className="image-link" key={id+1} href={mediaLink} target="_blank">
                         <img src={miroImg}/>
                     </a>
                     <a key={id+2} href={"/item/"+id}>
@@ -226,7 +226,7 @@ function Project(props: MyComponentProps)  {
         if (itemType == "comment") {
             return (
                 <div id={"wip-item-"+id} key={id} className="wip-item filter-comment">
-                    <a className="image-link" key={id+1} href={"/item/"+id}>
+                    <a className="image-link" key={id+1} href={mediaLink} target="_blank">
                         <img src={commentImg}/>
                     </a>
                     <a className="comment-link" key={id+2} href={"/item/"+id}>
