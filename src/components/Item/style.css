@@ -7,6 +7,12 @@
 
 .Item .person-right h1 {
 	word-break: break-all;
+    margin-right: 60px;
+}
+
+.Item .right-panel {
+    position: relative;
+    padding: 90px;
 }
 
 .Item .right-panel img {
@@ -40,6 +46,74 @@
 .Item .person-meta p {
     margin-bottom: 10px;
 }
+
+/* back button */
+
+.back-button {
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    height: 25px;
+    width: 25px;
+    cursor: pointer;
+}
+
+.back-to-all-projects {
+    position: absolute;
+    top: 80px;
+    left: 50px;
+    background-color: #202020;
+    color: white;
+    text-decoration: none;
+    padding: 7px 15px;
+    border-radius: 5px;
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+.back-caret {
+    width: 0; 
+    height: 0; 
+    border-top: 4px solid transparent;
+    border-bottom: 4px solid transparent; 
+    border-right: 4px solid white;
+    display: inline-block;
+    margin-right: 5px;
+}
+
+/* add to locker */
+
+.Item .add-to-locker {
+    height: 45px;
+    width: 45px;
+    top: 30px;
+    right: 30px;
+    overflow: hidden;
+    border-radius: 100%;
+    opacity: 1;
+    background-color: black;
+    border: 1px solid white;
+}
+
+.Item .add-to-locker img {
+    width: 26px;
+    height: 26px;
+    margin-left: 1px;
+    margin-top: 5px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

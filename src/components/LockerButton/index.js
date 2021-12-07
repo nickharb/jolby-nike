@@ -12,8 +12,14 @@ function setStorage(id){
         storage = id;
     }
     localStorage.setItem("locker", storage);
-    document.querySelector("#wip-item-"+id+" .add-to-locker").innerHTML = "✓"
-    document.querySelector("#wip-item-"+id+" .add-to-locker").style.pointerEvents = "none"
+
+    if (document.getElementById('root').classList.contains('wip-root')) {
+        document.querySelector("#wip-item-"+id+" .add-to-locker").innerHTML = "✓"
+        document.querySelector("#wip-item-"+id+" .add-to-locker").style.pointerEvents = "none"
+    } else {
+        document.querySelector(".add-to-locker").innerHTML = "✓"
+        document.querySelector(".add-to-locker").style.pointerEvents = "none"
+    }
 }
 /* function to check if item already exists in locker */
 function checkStorage(id){

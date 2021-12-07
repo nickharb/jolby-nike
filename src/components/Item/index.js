@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Header, Nav, LockerButton } from '../';
 import './style.css';
+import back from './img/back.svg';
 
 import {
     BrowserRouter as Router,
@@ -76,23 +77,29 @@ function Item(props: MyComponentProps)  {
                             </div>
                         </div>
 
+
                         <div className="person-meta person-section">
                             <h2>File Info</h2>
                             <p>Updated: {new Date(data.knowledgeItem.modifiedAt).today()} by {data.knowledgeItem.modifiedByName}</p>
                             <p>Owner: {data.knowledgeItem.modifiedByName}</p>
                         </div>
-
                         
                         
                         <button className="open-file-link"><a key={data.knowledgeItem.id+2} href={data.knowledgeItem.mediaLink} target="_blank">Open file in Box</a></button>
                         
 
-                        {/*<LockerButton id={data.knowledgeItem.id}/>*/}
+                        <LockerButton id={data.knowledgeItem.id}/>
 
                     </div>
+
                     <div className="right-panel">
+
+                        <a className="back-button" href="/Wip"><img src={back} alt="Person" /></a>
+
                         <img src={data.knowledgeItem.mediaLink}/>
                     </div>
+
+                    <a className="back-to-all-projects" href="/Projects"><div className="back-caret"></div> Back to All Projects</a>
                 </div>
             </div>
         </>

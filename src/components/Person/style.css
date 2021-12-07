@@ -1,8 +1,8 @@
 /* Person specific styles */
 
 .Person.content-wrapper {
-    margin-left: 50px;
-    margin-right: 50px;
+    margin-left: 20px;
+    margin-right: 20px;
     margin-bottom: 100px;
     margin-top: 80px;
 }
@@ -103,7 +103,7 @@
 }
 
 .left-panel {
-    width: 28%;
+    width: 500px;
     border-radius: 10px;
     padding: 30px;
     position: relative;
@@ -111,7 +111,7 @@
 }
 
 .right-panel  {
-    width: 61%;
+    width: 1040px;
     border-radius: 10px;
     padding: 30px;
     position: relative;
