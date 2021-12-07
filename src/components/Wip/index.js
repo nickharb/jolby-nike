@@ -64,6 +64,7 @@ const WIP = gql`
             filesize
             size
             fileType
+            thumbnailLink
         }
     }
 `;
@@ -96,7 +97,7 @@ function Wip() {
     // if(data2){
     //     wipArray.shift(data2.newKnowledgeItem)
     // }
-    let wips = wipArray.map(function({ id, mediaLink, itemType, name, modifiedAt, filesize, fileType }) {
+    let wips = wipArray.map(function({ id, mediaLink, itemType, name, modifiedAt, filesize, fileType, thumbnailLink }) {
 
         if (itemType == "file" && (mediaLink?.includes(".jpeg") || mediaLink?.includes(".jpg")) ) {
             return (
@@ -221,7 +222,7 @@ function Wip() {
             return (
                 <div id={"wip-item-"+id} key={id} className="wip-item filter-miro">
                     <a className="image-link" key={id+1} href={"/item/"+id}>
-                        <img src={miroImg}/>
+                        <img src={thumbnailLink}/>
                     </a>
                     <a key={id+2} href={"/item/"+id}>
                         {name}
