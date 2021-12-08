@@ -40,6 +40,7 @@ const LOCKER = gql`
             filesize
             size
             fileType
+            text
         }
         projects {
             id
@@ -323,7 +324,7 @@ function Locker(props: MyComponentProps)  {
     const masonryOptions = {
         transitionDuration: 300,
         gutter: 20,
-        columnWidth: 290
+        columnWidth: 230
     };
 
 

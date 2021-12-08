@@ -1,5 +1,9 @@
 /* Item specific styles */
 
+.Item.content-wrapper {
+    margin-top: 80px;
+}
+
 .Item .person-left img {
 	width: 100px;
 	height: auto;
