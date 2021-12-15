@@ -223,8 +223,8 @@ function Wip() {
             return (
                 <div id={"wip-item-"+id} key={id} className="wip-item filter-miro">
                     <a className="image-link" key={id+1} href={mediaLink} target="_blank">
-                        {/*<img src={thumbnailLink}/>*/}
-                        <img src={miroImg}/>
+                        <img src={thumbnailLink}/>
+                        {/*<img src={miroImg}/>*/}
                     </a>
                     <a key={id+2} href={"/item/"+id}>
                         {name}
