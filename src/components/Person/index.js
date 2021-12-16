@@ -24,9 +24,27 @@ import {
     InMemoryCache,
     ApolloProvider,
     useQuery,
+    useSubscription,
     gql
 } from "@apollo/client";
 import {withRouter, RouteComponentProps} from "react-router";
+const PERSON_SUBSCRIPTION = gql`
+subscription {
+  newPerson {
+    id
+    name
+    title
+    abbreviation
+    capacity
+    roles
+    talents
+    curiosities
+    teams {
+        id
+        name
+    }
+  }
+}`;
 
 const PERSON = gql`
     query getPerson($id: ID!) {
@@ -66,6 +84,10 @@ const PERSON = gql`
 function Person(props: MyComponentProps)  {
     const { loading, error, data } = useQuery(PERSON,{
         variables: { id: props.match.params.id }});
+    const { data2, loading2 } = useSubscription(
+        PERSON_SUBSCRIPTION,
+        { variables: {  } }
+      );
     if (loading) return <p>Loading...</p>;
     if (error) return <p>{error}</p>;
 

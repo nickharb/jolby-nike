@@ -77,6 +77,7 @@ function Wip() {
     KNOWLEDGE_SUBSCRIPTION,
             { variables: {  } }
           );
+      console.log(data2)
     if (loading) return <p>Loading...</p>;
     if (error) return <p>Error :(</p>;
 
