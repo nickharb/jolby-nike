@@ -56,7 +56,7 @@ const KNOWLEDGE_SUBSCRIPTION = gql`
 
 const WIP = gql`
     query getWip{
-        knowledgeItems {
+        knowledgeItems(limit:500) {
             id
             name
             mediaLink
