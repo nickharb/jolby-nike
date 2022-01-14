@@ -140,6 +140,7 @@ ReactDOM.render(
   <React.StrictMode>
 	  <ApolloProvider client={client}>
       <LatestPerson />
+      <LatestProject />
 	    <App />
 	  </ApolloProvider>
   </React.StrictMode>,
