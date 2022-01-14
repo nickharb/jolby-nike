@@ -266,8 +266,8 @@ function Wip() {
         
         if (filter) {
             let filters = document.querySelectorAll(filter);
-            for (var i = filters.length - 1; i >= 0; i--) {
-                filters[i].classList.remove("hide")
+            for (var x = filters.length - 1; x >= 0; x--) {
+                filters[x].classList.remove("hide")
             }
         }
     }

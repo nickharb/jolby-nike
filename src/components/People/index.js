@@ -22,10 +22,6 @@ subscription {
   newPerson {
     id
     name
-    teams {
-        id
-        name
-    }
   }
 }`;
 
@@ -80,13 +76,14 @@ function People() {
         document.getElementById('root').classList.add('loaded');
         document.body.classList.add('loaded');
     }, 100);
+
     if(data2){
       data.teams[0].people.shift(data2.newPerson) 
       console.log(data.teams[0])
     }
    
     let teams = data.teams.map(({ id, name, people }, teamIndex) => (
-        <div key={id} className="team">
+        <div id={name.toLowerCase().split(" ").join("-")} key={id} className="team">
             <h3>{name}</h3>
             <div className="people-wrapper">
                 {people.map(function (person, index) {

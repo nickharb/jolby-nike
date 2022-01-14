@@ -60,7 +60,7 @@ const client = new ApolloClient({
 // });
 
 
-// injecting an example subscription GraphQL query here
+//injecting an example subscription GraphQL query here
 const PERSON_SUBSCRIPTION = gql`
 subscription {
   newPerson {
@@ -69,14 +69,69 @@ subscription {
   }
 }`;
 
-// subscribe and return
+const PROJECT_SUBSCRIPTION = gql`
+subscription {
+  newProject {
+    id
+    abbreviation
+    name
+    portfolioName
+    subtitle
+    tags
+    status
+    people {
+        id
+    }
+  }
+}`;
+  // if(typeof document != `undefined` && data){
+  //   let cont = document.querySelector("#valiant-labs .people-wrapper");
+  //   let newP = document.createElement("div");
+  //   newP.classList.add("person");
+  //   newP.innerHTML = "<a href='/person/"+data.newPerson.id+"'>"+data.newPerson.name+"</a>"
+  //   cont.prependChild(newP)
+  // }
+//subscribe and return
 function LatestPerson({ postID }) {
   const { data, loading } = useSubscription(
     PERSON_SUBSCRIPTION,
     { variables: {  } }
   );
-  
-  return <h4>{!loading && console.log(data.newPerson)}</h4>;
+
+
+ if(typeof document != `undefined` && data){
+    let cont = document.querySelector("#valiant-labs .people-wrapper");
+    let newP = document.createElement("div");
+    newP.classList.add("person");
+    newP.innerHTML = "<a href='/person/"+data.newPerson.id+"'>"+data.newPerson.name+"</a>"
+    if(cont){
+      cont.prepend(newP)
+    }
+  }
+  return( 
+    <h4>{!loading && console.log(data.newPerson)}</h4>
+  );
+}
+
+function LatestProject({ postID }) {
+  const { data, loading } = useSubscription(
+    PROJECT_SUBSCRIPTION,
+    { variables: {  } }
+  );
+
+
+ if(typeof document != `undefined` && data){
+    let cont = document.querySelector(".Projects.content-wrapper > div > div");
+    let newP = document.createElement("div");
+    newP.innerHTML = '<div className="project"><div className="project-columns"><div className="project-left"><span><a href="/project/"'+data.newProject.id+'">'+data.newProject.abbreviation+'</a></span></div><div className="project-right"><h2><a href="/project/"'+data.newProject.id+'">'+data.newProject.name+'</a></h2><h3>'+data.newProject.portfolioName+'</h3><p>'+data.newProject.subtitle+'</p><div className="people-counter"><img src="/static/media/person.19383cc0.svg" alt="Person" /><p>0</p></div></div></div><div className="project-meta"><h3>Status</h3><p>'+data.newProject.status+'</p><h3>Tags</h3><p>'+data.newProject.tags+'</p></div></div>';
+
+    if(cont){
+      cont.prepend(newP)
+    }
+  }
+  return( 
+    <h4>{!loading && console.log(data.newProject)}</h4>
+  );
 }
 
 
@@ -84,8 +139,8 @@ function LatestPerson({ postID }) {
 ReactDOM.render(
   <React.StrictMode>
 	  <ApolloProvider client={client}>
-	    <App />
       <LatestPerson />
+	    <App />
 	  </ApolloProvider>
   </React.StrictMode>,
   document.getElementById('root')
