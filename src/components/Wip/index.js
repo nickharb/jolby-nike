@@ -44,15 +44,7 @@ const KNOWLEDGE_SUBSCRIPTION = gql`
         }
     }`;
 
-// subscribe and return
-// function LatestPerson({ postID }) {
-//   const { data, loading } = useSubscription(
-//     PERSON_SUBSCRIPTION,
-//     { variables: {  } }
-//   );
-  
-//   return <h4>{!loading && console.log(data)}</h4>;
-// }
+
 
 const WIP = gql`
     query getWip{

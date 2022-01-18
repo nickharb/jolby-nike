@@ -109,7 +109,7 @@ function LatestPerson({ postID }) {
     }
   }
   return( 
-    <h4>{!loading && console.log(data.newPerson)}</h4>
+    <h4 className="loading-message">{!loading && console.log(data.newPerson)}</h4>
   );
 }
 
@@ -130,7 +130,7 @@ function LatestProject({ postID }) {
     }
   }
   return( 
-    <h4>{!loading && console.log(data.newProject)}</h4>
+    <h4 className="loading-message">{!loading && console.log(data.newProject)}</h4>
   );
 }
 

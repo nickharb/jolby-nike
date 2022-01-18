@@ -26,6 +26,10 @@ body {
     transition: opacity 1.5s;
 }
 
+.loading-message {
+    display: none;
+}
+
 
 body {
     font-family: HN, Helvetica, sans-serif;
