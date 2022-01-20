@@ -31,7 +31,7 @@ import {
 
 const LOCKER = gql`
     query getLocker{
-        knowledgeItems {
+        knowledgeItems(limit: 500) {
             id
             name
             mediaLink
@@ -109,10 +109,11 @@ function Locker(props: MyComponentProps)  {
     /* retrieve locker item ids from localstorage */
     let lockeritems = localStorage.getItem("locker")?.split(",");
 
-    let knowledgeItems = data.knowledgeItems.map(function({ id, mediaLink, itemType, name, modifiedAt, filesize, fileType, text }) {
-        if (itemType == "file" && (mediaLink?.includes(".jpeg") || mediaLink?.includes(".jpg")) && lockeritems?.includes(id)) {
+    let knowledgeItems = data.knowledgeItems.map(function({ id, mediaLink, itemType, name, modifiedAt, filesize, fileType, thumbnailLink, text }) {
+        if (lockeritems?.includes(id)) {
+            if (itemType == "file" && (mediaLink?.includes(".jpeg") || mediaLink?.includes(".jpg")) ) {
             return (
-                <div id={"wip-item-"+id} key={id} className="wip-item filter-image">
+                <div id={"wip-item-"+id} key={id} className={`filter-image wip-item`}>
                     <a key={id+1} href={"/item/"+id}>
                         <img src={mediaLink}/>
                     </a>
@@ -120,12 +121,151 @@ function Locker(props: MyComponentProps)  {
                         {name}
                     </a>
                     <div className="wip-meta">
-                        <p>{itemType} / {filesize} / {new Date(modifiedAt).today()}</p>
-                        <button className="add-to-locker" onClick={() => removeItem(id)}><img src={closeImg}/></button>
+                        <p>Image / {filesize} / {new Date(modifiedAt).today()}</p>
+                                                <button className="add-to-locker" onClick={() => removeItem(id)}><img src={closeImg}/></button>
+
+                    </div>
+ 
+                </div>
+            )
+        }
+
+        if (itemType == "file" && (mediaLink?.includes(".blend") || mediaLink?.includes(".obj") || mediaLink?.includes(".fbx")) ) {
+            return (
+                <div id={"wip-item-"+id} key={id} className="wip-item filter-render">
+                    <a className="image-link" key={id+1} href={mediaLink} target="_blank">
+                        <img src={renderImg}/>
+                    </a>
+                    <a key={id+2} href={"/item/"+id}>
+                        {name}
+                    </a>
+                    <div className="wip-meta">
+                        <p>3D Render / {filesize} / {new Date(modifiedAt).today()}</p>
+                                                <button className="add-to-locker" onClick={() => removeItem(id)}><img src={closeImg}/></button>
+
+                    </div>
+
+                </div>
+            )
+        }
+
+        if (itemType == "file" && (mediaLink?.includes(".numbers") || mediaLink?.includes(".xlsx")) ) {
+            return (
+                <div id={"wip-item-"+id} key={id} className="wip-item filter-sheet">
+                    <a className="image-link" key={id+1} href={mediaLink} target="_blank">
+                        <img src={sheetImg}/>
+                    </a>
+                    <a key={id+2} href={"/item/"+id}>
+                        {name}
+                    </a>
+                    <div className="wip-meta">
+                        <p>Spreadsheet / {filesize} / {new Date(modifiedAt).today()}</p>
+                                                <button className="add-to-locker" onClick={() => removeItem(id)}><img src={closeImg}/></button>
+
+                    </div>
+            
+                </div>
+            )
+        }
+
+        if (itemType == "file" && (mediaLink?.includes(".sketch")) ) {
+            return (
+                <div id={"wip-item-"+id} key={id} className="wip-item filter-sketch">
+                    <a className="image-link" key={id+1} href={mediaLink} target="_blank">
+                        <img src={sketchImg}/>
+                    </a>
+                    <a key={id+2} href={"/item/"+id}>
+                        {name}
+                    </a>
+                    <div className="wip-meta">
+                        <p>Sketch File / {filesize} / {new Date(modifiedAt).today()}</p>
+                                                <button className="add-to-locker" onClick={() => removeItem(id)}><img src={closeImg}/></button>
+
                     </div>
                   
                 </div>
             )
+        }
+
+        if (itemType == "file" && (mediaLink?.includes(".pdf")) ) {
+            return (
+                <div id={"wip-item-"+id} key={id} className="wip-item filter-pdf">
+                    <a className="image-link" key={id+1} href={mediaLink} target="_blank">
+                        <img src={pdfImg}/>
+                    </a>
+                    <a key={id+2} href={"/item/"+id}>
+                        {name}
+                    </a>
+                    <div className="wip-meta">
+                        <p>PDF / {filesize} / {new Date(modifiedAt).today()}</p>
+                                                <button className="add-to-locker" onClick={() => removeItem(id)}><img src={closeImg}/></button>
+
+                    </div>
+
+                </div>
+            )
+        }
+
+        if (itemType == "file" && (mediaLink?.includes(".mp4")) ) {
+            return (
+                <div id={"wip-item-"+id} key={id} className="wip-item filter-video">
+                    <a className="image-link" key={id+1} href={mediaLink} target="_blank">
+                        <img src={videoImg}/>
+                    </a>
+                    <a key={id+2} href={"/item/"+id}>
+                        {name}
+                    </a>
+                    <div className="wip-meta">
+                        <p>Video / {filesize} / {new Date(modifiedAt).today()}</p>
+                                                <button className="add-to-locker" onClick={() => removeItem(id)}><img src={closeImg}/></button>
+
+                    </div>
+            
+                </div>
+            )
+        }
+
+        if (itemType == "file" && (mediaLink?.includes(".docx") || mediaLink?.includes(".pages")) ) {
+            return (
+                <div id={"wip-item-"+id} key={id} className="wip-item filter-doc">
+                    <a className="image-link" key={id+1} href={mediaLink} target="_blank">
+                        <img src={docImg}/>
+                    </a>
+                    <a key={id+2} href={"/item/"+id}>
+                        {name}
+                    </a>
+                    <div className="wip-meta">
+                        <p>Document / {filesize} / {new Date(modifiedAt).today()}</p>
+                                                <button className="add-to-locker" onClick={() => removeItem(id)}><img src={closeImg}/></button>
+
+                    </div>
+                  
+                </div>
+            )
+        }
+
+        if (itemType == "miro") {
+            return (
+                <div id={"wip-item-"+id} key={id} className="wip-item filter-miro">
+                    <a className="image-link" key={id+1} href={mediaLink} target="_blank">
+                        <img src={thumbnailLink}/>
+                        {/*<img src={miroImg}/>*/}
+                    </a>
+                    <a key={id+2} href={"/item/"+id}>
+                        {name}
+                    </a>
+                    <div className="wip-meta">
+                        <p>Miro Board / {new Date(modifiedAt).today()}</p>
+                        <button className="add-to-locker" onClick={() => removeItem(id)}><img src={closeImg}/></button>
+
+                    </div>
+                </div>
+            )
+        }
+
+
+           
+
         }
 
         if (itemType == "file" && (mediaLink?.includes(".blend") || mediaLink?.includes(".obj") || mediaLink?.includes(".fbx")) && lockeritems?.includes(id)) {
