@@ -42,7 +42,7 @@ function Header() {
                 <div className="logo-image">
                     <img src={logo} alt="Logo" />
                 </div>
-                <a href="/">NIKE GENESIS</a>
+                <a href="/">NIKE GENESIS BETA</a>
             </div>
             <div className="header-right" onClick={toggleClocks}>
 
